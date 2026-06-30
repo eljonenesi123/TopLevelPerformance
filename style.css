@@ -310,6 +310,11 @@ nav{
   font-size:14px;margin-bottom:18px;color:var(--blue-light);
 }
 .form-success.show{display:block;}
+.form-error{
+  display:none;background:var(--surface-2);border:1px solid #ff4444;padding:16px 18px;
+  font-size:14px;margin-bottom:18px;color:#ff8a8a;
+}
+.form-error.show{display:block;}
 
 /* ===== CTA BAND ===== */
 .cta-band{background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:64px 0;text-align:center;}

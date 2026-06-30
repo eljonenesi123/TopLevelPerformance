@@ -75,13 +75,13 @@
             <div class="value" data-i18n="value_location">Tirana, Albania</div>
           </div>
         </div>
-        <div class="contact-detail">
+        <a class="contact-detail" href="mailto:toplevelperformance2@gmail.com" style="color:inherit;">
           <div class="icon">@</div>
           <div>
             <div class="label" data-i18n="label_email">Email</div>
-            <div class="value">coach@toplevelperformance.com</div>
+            <div class="value">toplevelperformance2@gmail.com</div>
           </div>
-        </div>
+        </a>
         <a class="contact-detail" href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" target="_blank" rel="noopener" style="color:inherit;">
           <div class="icon">IG</div>
           <div>
@@ -94,7 +94,9 @@
 
       <div class="reveal">
         <div class="form-success" id="form-success" data-i18n="form_success">Message sent. I'll get back to you within a day.</div>
-        <form id="contact-form">
+        <div class="form-error" id="form-error" data-i18n="form_error">Something went wrong. Please try again or call instead.</div>
+        <form id="contact-form" action="https://formspree.io/f/mrewaalw" method="POST">
+          <input type="hidden" name="_subject" value="New inquiry — Top Level Performance">
           <div class="form-row">
             <div class="form-field">
               <label for="name" data-i18n="label_name">Name</label>
@@ -117,9 +119,10 @@
             <label for="message" data-i18n="label_message">Message</label>
             <textarea id="message" name="message" data-i18n-placeholder="placeholder_message" placeholder="Tell me about your goals and training experience" required></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;" data-i18n="btn_send">Send message</button>
+          <button type="submit" class="btn-primary" id="form-submit-btn" style="border:none;cursor:pointer;width:100%;" data-i18n="btn_send">Send message</button>
         </form>
       </div>
+
 
     </div>
   </div>
