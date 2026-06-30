@@ -15,51 +15,59 @@
   <nav>
     <a href="index.html" class="logo"><span class="mark"></span>TOP LEVEL <span class="sub">PERFORMANCE</span></a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="programs.html">Programs</a>
-      <a href="training.html">Training</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" class="active" data-i18n="nav_home">Home</a>
+      <a href="programs.html" data-i18n="nav_programs">Programs</a>
+      <a href="training.html" data-i18n="nav_training">Training</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-actions">
+      <div class="lang-switch desktop-only">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sq">AL</button>
+      </div>
       <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" class="icon-btn desktop-only" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-      <a href="tel:+355685999779" class="nav-cta desktop-only">Call now</a>
+      <a href="tel:+355685999779" class="nav-cta desktop-only" data-i18n="nav_call">Call now</a>
     </div>
     <button class="nav-toggle" aria-label="Open menu"><span></span></button>
   </nav>
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="programs.html">Programs</a>
-    <a href="training.html">Training</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="programs.html" data-i18n="nav_programs">Programs</a>
+    <a href="training.html" data-i18n="nav_training">Training</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="sq">AL</button>
+    </div>
     <div class="icon-row">
       <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" class="icon-btn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
     </div>
-    <a href="tel:+355685999779" class="nav-cta">Call now</a>
+    <a href="tel:+355685999779" class="nav-cta" data-i18n="nav_call">Call now</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">Online & in-person coaching</span>
-      <h1>Train like it's<br>the only thing<br>that <span class="accent">matters.</span></h1>
-      <p>Top Level Performance builds strength and conditioning programs for people who want results they can measure — not generic workouts. Online coaching for anywhere, 1-on-1 sessions for hands-on form and intensity.</p>
+      <span class="eyebrow" data-i18n="hero_eyebrow">Online & 1-on-1 coaching</span>
+      <h1 data-i18n-html="hero_h1">Train like it's<br>the only thing<br>that <span class="accent">matters.</span></h1>
+      <p data-i18n="hero_p">Strength and conditioning programs built around your goals — not generic workouts.</p>
       <div class="hero-actions">
-        <a href="programs.html" class="btn-primary">View programs</a>
-        <a href="tel:+355685999779" class="btn-ghost">Call now</a>
+        <a href="programs.html" class="btn-primary" data-i18n="btn_view_programs">View programs</a>
+        <a href="tel:+355685999779" class="btn-ghost" data-i18n="btn_call_now">Call now</a>
       </div>
       <div class="hero-stats">
         <div>
           <div class="stat-num">8+</div>
-          <div class="stat-label">Years coaching</div>
+          <div class="stat-label" data-i18n="stat_years">Years coaching</div>
         </div>
         <div>
           <div class="stat-num">200+</div>
-          <div class="stat-label">Athletes trained</div>
+          <div class="stat-label" data-i18n="stat_athletes">Athletes trained</div>
         </div>
         <div>
           <div class="stat-num">2</div>
-          <div class="stat-label">Coaching paths</div>
+          <div class="stat-label" data-i18n="stat_paths">Coaching paths</div>
         </div>
       </div>
     </div>
@@ -73,25 +81,49 @@
 <section class="section border-top">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">What you get</span>
-      <h2>Coaching built around how you train</h2>
-      <p>Every program starts with the same standard — real programming, real accountability — split into two ways to work together.</p>
+      <h2 data-i18n="services_h2">What's included</h2>
     </div>
     <div class="services-grid reveal-stagger">
       <div class="service-card">
-        <div class="service-index">Strength</div>
-        <h3>Strength &amp; hypertrophy</h3>
-        <p>Progressive lifting programs built around compound movements, tracked weekly so the bar keeps moving up.</p>
+        <div class="service-index" data-i18n="svc1_index">Strength</div>
+        <h3 data-i18n="svc1_h3">Strength &amp; hypertrophy</h3>
+        <p data-i18n="svc1_p">Lifting programs that progress weekly so you keep getting stronger.</p>
       </div>
       <div class="service-card">
-        <div class="service-index">Conditioning</div>
-        <h3>Conditioning &amp; fat loss</h3>
-        <p>Metabolic and conditioning blocks layered into your plan — kettlebells, intervals, and circuits that actually fit your week.</p>
+        <div class="service-index" data-i18n="svc2_index">Conditioning</div>
+        <h3 data-i18n="svc2_h3">Conditioning &amp; fat loss</h3>
+        <p data-i18n="svc2_p">Kettlebells, intervals, and circuits built around your week.</p>
       </div>
       <div class="service-card">
-        <div class="service-index">Form</div>
-        <h3>Technique &amp; mobility</h3>
-        <p>Video form checks and mobility work so every rep is one that builds you up instead of breaking you down.</p>
+        <div class="service-index" data-i18n="svc3_index">Form</div>
+        <h3 data-i18n="svc3_h3">Technique &amp; mobility</h3>
+        <p data-i18n="svc3_p">Form checks and mobility work so every rep counts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section border-top">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2 data-i18n="certs_h2">Certified &amp; qualified</h2>
+    </div>
+    <div class="certs-grid reveal-stagger">
+      <div class="cert-card">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 2z"/></svg></div>
+        <div class="cert-body">
+          <h3 data-i18n="cert1_h3">Certified Personal Trainer</h3>
+          <div class="cert-issuer">ISSA</div>
+          <a href="assets/certificates/certificate2.pdf" target="_blank" class="cert-link" data-i18n="cert_link">View certificate</a>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 2z"/></svg></div>
+        <div class="cert-body">
+          <h3 data-i18n="cert2_h3">Corrective Exercise Specialist</h3>
+          <div class="cert-issuer">ISSA</div>
+          <a href="assets/certificates/certificate1.pdf" target="_blank" class="cert-link" data-i18n="cert_link">View certificate</a>
+        </div>
       </div>
     </div>
   </div>
@@ -99,11 +131,10 @@
 
 <section class="cta-band reveal">
   <div class="wrap">
-    <h2>Two ways to train. One standard.</h2>
-    <p>Online coaching starts at just €25/month. Or go all-in with hands-on 1-on-1 sessions.</p>
+    <h2 data-i18n="cta_ready">Ready to start?</h2>
     <div class="cta-actions">
-      <a href="programs.html" class="btn-primary">Compare programs</a>
-      <a href="tel:+355685999779" class="btn-ghost">Call now</a>
+      <a href="programs.html" class="btn-primary" data-i18n="btn_view_programs">View programs</a>
+      <a href="tel:+355685999779" class="btn-ghost" data-i18n="btn_call_now">Call now</a>
     </div>
   </div>
 </section>
@@ -113,28 +144,22 @@
     <div class="footer-top">
       <div>
         <div class="logo"><span class="mark"></span>TOP LEVEL <span class="sub">PERFORMANCE</span></div>
-        <p>Online and 1-on-1 strength coaching for people who want a plan, not a guess.</p>
+        <p data-i18n="footer_tagline">Online and 1-on-1 strength coaching.</p>
       </div>
       <div class="footer-col">
-        <h4>Programs</h4>
-        <a href="programs.html#online">Online coaching</a>
-        <a href="programs.html#oneonone">1-on-1 coaching</a>
+        <h4 data-i18n="footer_site">Site</h4>
+        <a href="programs.html" data-i18n="nav_programs">Programs</a>
+        <a href="training.html" data-i18n="nav_training">Training</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Site</h4>
-        <a href="training.html">Training</a>
-        <a href="programs.html">Programs</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
+        <h4 data-i18n="footer_follow">Follow</h4>
         <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" target="_blank" rel="noopener">Instagram</a>
-        <a href="#">YouTube</a>
+        <a href="tel:+355685999779" data-i18n="footer_call">Call</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Top Level Performance</span>
-      <span>Built for athletes who want more</span>
     </div>
   </div>
 </footer>

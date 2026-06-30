@@ -15,34 +15,41 @@
   <nav>
     <a href="index.html" class="logo"><span class="mark"></span>TOP LEVEL <span class="sub">PERFORMANCE</span></a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Programs</a>
-      <a href="training.html">Training</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="programs.html" data-i18n="nav_programs">Programs</a>
+      <a href="training.html" data-i18n="nav_training">Training</a>
+      <a href="contact.html" class="active" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-actions">
+      <div class="lang-switch desktop-only">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sq">AL</button>
+      </div>
       <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" class="icon-btn desktop-only" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-      <a href="tel:+355685999779" class="nav-cta desktop-only">Call now</a>
+      <a href="tel:+355685999779" class="nav-cta desktop-only" data-i18n="nav_call">Call now</a>
     </div>
     <button class="nav-toggle" aria-label="Open menu"><span></span></button>
   </nav>
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="programs.html">Programs</a>
-    <a href="training.html">Training</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="programs.html" data-i18n="nav_programs">Programs</a>
+    <a href="training.html" data-i18n="nav_training">Training</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="sq">AL</button>
+    </div>
     <div class="icon-row">
       <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" class="icon-btn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
     </div>
-    <a href="tel:+355685999779" class="nav-cta">Call now</a>
+    <a href="tel:+355685999779" class="nav-cta" data-i18n="nav_call">Call now</a>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">Get in touch</span>
-    <h1>Let's build your plan</h1>
-    <p>Send a message or call now. Tell me your goals, schedule, and which program you're leaning toward.</p>
+    <h1 data-i18n="contact_h1">Let's talk</h1>
+    <p data-i18n="contact_p">Call now, or send a quick message below.</p>
   </div>
 </section>
 
@@ -51,60 +58,59 @@
     <div class="contact-grid">
 
       <div class="contact-info reveal">
-        <h3>Reach me directly</h3>
-        <p>Prefer to talk it through first? Call now, or reach out on Instagram — usually a reply within a day.</p>
+        <h3 data-i18n="contact_reach">Reach me directly</h3>
+        <p data-i18n="contact_reply">Usually a reply within a day.</p>
 
         <a class="contact-detail" href="tel:+355685999779" style="color:inherit;">
           <div class="icon">#</div>
           <div>
-            <div class="label">Phone</div>
+            <div class="label" data-i18n="label_phone">Phone</div>
             <div class="value">+355 68 599 9779</div>
           </div>
         </a>
         <div class="contact-detail">
           <div class="icon">@</div>
           <div>
-            <div class="label">Email</div>
+            <div class="label" data-i18n="label_email">Email</div>
             <div class="value">coach@toplevelperformance.com</div>
           </div>
         </div>
         <a class="contact-detail" href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" target="_blank" rel="noopener" style="color:inherit;">
           <div class="icon">IG</div>
           <div>
-            <div class="label">Instagram</div>
+            <div class="label" data-i18n="label_instagram">Instagram</div>
             <div class="value">@top_level.performance</div>
           </div>
         </a>
-        <a href="tel:+355685999779" class="btn-primary" style="margin-top:24px;">Call now</a>
+        <a href="tel:+355685999779" class="btn-primary" style="margin-top:24px;" data-i18n="btn_call_now">Call now</a>
       </div>
 
       <div class="reveal">
-        <div class="form-success" id="form-success">Message sent. I'll get back to you within a day.</div>
+        <div class="form-success" id="form-success" data-i18n="form_success">Message sent. I'll get back to you within a day.</div>
         <form id="contact-form">
           <div class="form-row">
             <div class="form-field">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required>
+              <label for="name" data-i18n="label_name">Name</label>
+              <input type="text" id="name" name="name" data-i18n-placeholder="placeholder_name" placeholder="Your full name" required>
             </div>
             <div class="form-field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@email.com" required>
+              <label for="email" data-i18n="label_email">Email</label>
+              <input type="email" id="email" name="email" data-i18n-placeholder="placeholder_email" placeholder="you@email.com" required>
             </div>
           </div>
           <div class="form-field">
-            <label for="program">Which program interests you?</label>
+            <label for="program" data-i18n="label_program_select">Which program interests you?</label>
             <select id="program" name="program">
-              <option value="online">Online coaching — €25/month</option>
-              <option value="1on1">1-on-1 coaching — €95/month</option>
-              <option value="unsure">Not sure yet</option>
+              <option value="online" data-i18n="opt_online">Online coaching — €25/month</option>
+              <option value="1on1" data-i18n="opt_1on1">1-on-1 coaching — €95/month</option>
+              <option value="unsure" data-i18n="opt_unsure">Not sure yet</option>
             </select>
           </div>
           <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell me about your goals and training experience" required></textarea>
+            <label for="message" data-i18n="label_message">Message</label>
+            <textarea id="message" name="message" data-i18n-placeholder="placeholder_message" placeholder="Tell me about your goals and training experience" required></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;">Send message</button>
-          <p class="form-note">This form is a placeholder — connect it to your email or booking tool to go live.</p>
+          <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;" data-i18n="btn_send">Send message</button>
         </form>
       </div>
 
@@ -117,28 +123,22 @@
     <div class="footer-top">
       <div>
         <div class="logo"><span class="mark"></span>TOP LEVEL <span class="sub">PERFORMANCE</span></div>
-        <p>Online and 1-on-1 strength coaching for people who want a plan, not a guess.</p>
+        <p data-i18n="footer_tagline">Online and 1-on-1 strength coaching.</p>
       </div>
       <div class="footer-col">
-        <h4>Programs</h4>
-        <a href="programs.html#online">Online coaching</a>
-        <a href="programs.html#oneonone">1-on-1 coaching</a>
+        <h4 data-i18n="footer_site">Site</h4>
+        <a href="programs.html" data-i18n="nav_programs">Programs</a>
+        <a href="training.html" data-i18n="nav_training">Training</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Site</h4>
-        <a href="training.html">Training</a>
-        <a href="programs.html">Programs</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
+        <h4 data-i18n="footer_follow">Follow</h4>
         <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" target="_blank" rel="noopener">Instagram</a>
-        <a href="#">YouTube</a>
+        <a href="tel:+355685999779" data-i18n="footer_call">Call</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Top Level Performance</span>
-      <span>Built for athletes who want more</span>
     </div>
   </div>
 </footer>

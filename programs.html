@@ -15,34 +15,41 @@
   <nav>
     <a href="index.html" class="logo"><span class="mark"></span>TOP LEVEL <span class="sub">PERFORMANCE</span></a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="programs.html" class="active">Programs</a>
-      <a href="training.html">Training</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="programs.html" class="active" data-i18n="nav_programs">Programs</a>
+      <a href="training.html" data-i18n="nav_training">Training</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-actions">
+      <div class="lang-switch desktop-only">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sq">AL</button>
+      </div>
       <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" class="icon-btn desktop-only" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-      <a href="tel:+355685999779" class="nav-cta desktop-only">Call now</a>
+      <a href="tel:+355685999779" class="nav-cta desktop-only" data-i18n="nav_call">Call now</a>
     </div>
     <button class="nav-toggle" aria-label="Open menu"><span></span></button>
   </nav>
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="programs.html">Programs</a>
-    <a href="training.html">Training</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="programs.html" data-i18n="nav_programs">Programs</a>
+    <a href="training.html" data-i18n="nav_training">Training</a>
+    <a href="contact.html" data-i18n="nav_contact">Contact</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="sq">AL</button>
+    </div>
     <div class="icon-row">
       <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" class="icon-btn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
     </div>
-    <a href="tel:+355685999779" class="nav-cta">Call now</a>
+    <a href="tel:+355685999779" class="nav-cta" data-i18n="nav_call">Call now</a>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">Pick your path</span>
-    <h1>Online program vs. 1-on-1 coaching</h1>
-    <p>Both are built by hand, no templates. The difference is how close the coaching sits to your training session.</p>
+    <h1 data-i18n="programs_h1">Online vs. 1-on-1</h1>
+    <p data-i18n="programs_p">Pick how close you want the coaching.</p>
   </div>
 </section>
 
@@ -51,32 +58,30 @@
     <div class="programs-grid reveal-stagger">
 
       <div class="program-card" id="online">
-        <div class="program-name">Online program</div>
-        <h3>Train anywhere</h3>
-        <div class="program-price">From <span>€25</span> /month</div>
+        <div class="program-name" data-i18n="online_name">Online program</div>
+        <h3 data-i18n="online_h3">Train anywhere</h3>
+        <div class="program-price" data-i18n-html="online_price_html">From <span>€25</span> /month</div>
         <ul class="program-list">
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom training plan, updated every 4 weeks</li>
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>App-based tracking for sets, reps, and load</li>
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Weekly check-ins and plan adjustments</li>
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Video form review on request</li>
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Direct messaging coaching support</li>
+          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="online_li1">Custom plan, updated every 4 weeks</span></li>
+          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="online_li2">App-based tracking</span></li>
+          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="online_li3">Weekly check-ins</span></li>
+          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="online_li4">Direct messaging support</span></li>
         </ul>
-        <a href="tel:+355685999779" class="btn-ghost">Call to start</a>
+        <a href="tel:+355685999779" class="btn-ghost" data-i18n="online_btn">Call to start</a>
       </div>
 
       <div class="program-card featured" id="oneonone">
-        <div class="program-tag">Most hands-on</div>
-        <div class="program-name">1-on-1 coaching</div>
-        <h3>Train with me</h3>
-        <div class="program-price">From <span>€95</span> /month</div>
+        <div class="program-tag" data-i18n="oneonone_tag">Most hands-on</div>
+        <div class="program-name" data-i18n="oneonone_name">1-on-1 coaching</div>
+        <h3 data-i18n="oneonone_h3">Train with me</h3>
+        <div class="program-price" data-i18n-html="oneonone_price_html">From <span>€95</span> /month</div>
         <ul class="program-list">
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in the online program</li>
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>In-person sessions, coached live, set by set</li>
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Real-time technique correction under load</li>
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Session-by-session intensity adjustments</li>
-          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority scheduling and direct line to me</li>
+          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="oneonone_li1">Everything in the online program</span></li>
+          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="oneonone_li2">In-person sessions, coached live</span></li>
+          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="oneonone_li3">Real-time form correction</span></li>
+          <li><svg class="check" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="oneonone_li4">Priority scheduling</span></li>
         </ul>
-        <a href="tel:+355685999779" class="btn-primary">Call to book 1-on-1</a>
+        <a href="tel:+355685999779" class="btn-primary" data-i18n="oneonone_btn">Call to book 1-on-1</a>
       </div>
 
     </div>
@@ -86,29 +91,23 @@
 <section class="section border-top">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>Getting started</h2>
+      <h2 data-i18n="start_h2">Getting started</h2>
     </div>
     <div class="process-list reveal-stagger">
       <div class="process-step">
         <div class="num">01</div>
-        <h3>Quick call</h3>
-        <p>We talk through your goals, schedule, and training history.</p>
+        <h3 data-i18n="step1_h3">Quick call</h3>
+        <p data-i18n="step1_p">We talk through your goals and schedule.</p>
       </div>
       <div class="process-step">
         <div class="num">02</div>
-        <h3>Choose your path</h3>
-        <p>Online program or 1-on-1 coaching — whichever fits your life.</p>
+        <h3 data-i18n="step2_h3">Custom plan</h3>
+        <p data-i18n="step2_p">Built around your equipment and level.</p>
       </div>
       <div class="process-step">
         <div class="num">03</div>
-        <h3>Custom plan</h3>
-        <p>Your program is built around your equipment, schedule, and level.</p>
-      </div>
-      <div class="process-step">
-        <div class="num">04</div>
-        <h3>Train and adjust</h3>
-        <p>Weekly check-ins keep the plan moving as you get stronger.</p>
+        <h3 data-i18n="step3_h3">Train and adjust</h3>
+        <p data-i18n="step3_p">Weekly check-ins keep things moving.</p>
       </div>
     </div>
   </div>
@@ -117,25 +116,20 @@
 <section class="section border-top">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Questions</span>
-      <h2>Frequently asked</h2>
+      <h2 data-i18n="faq_h2">Frequently asked</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-q">Can I switch from online to 1-on-1 later?<span class="plus">+</span></button>
-        <div class="faq-a"><p>Yes. A lot of clients start online and move to 1-on-1 once they're ready for in-person coaching. We adjust your plan with no gap in training.</p></div>
+        <button class="faq-q"><span data-i18n="faq1_q">Can I switch programs later?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p data-i18n="faq1_a">Yes, anytime — most clients start online and move to 1-on-1 when they're ready.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Do I need a gym membership for the online program?<span class="plus">+</span></button>
-        <div class="faq-a"><p>No. Tell me what equipment you have access to — full gym, home setup, or just dumbbells — and your plan is built around it.</p></div>
+        <button class="faq-q"><span data-i18n="faq2_q">Do I need a gym membership?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p data-i18n="faq2_a">No. Tell me what equipment you have and your plan is built around it.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">How often do we check in?<span class="plus">+</span></button>
-        <div class="faq-a"><p>Online clients get a weekly check-in and plan update. 1-on-1 clients get that plus live coaching every session.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Is there a minimum commitment?<span class="plus">+</span></button>
-        <div class="faq-a"><p>No long-term contract. Both programs run month to month, and you can cancel anytime before your next billing date.</p></div>
+        <button class="faq-q"><span data-i18n="faq3_q">Is there a minimum commitment?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p data-i18n="faq3_a">No contract. Both programs run month to month — cancel anytime.</p></div>
       </div>
     </div>
   </div>
@@ -143,10 +137,9 @@
 
 <section class="cta-band reveal">
   <div class="wrap">
-    <h2>Not sure which program fits?</h2>
-    <p>Call now and we'll figure it out together.</p>
+    <h2 data-i18n="cta_not_sure">Not sure which fits?</h2>
     <div class="cta-actions">
-      <a href="tel:+355685999779" class="btn-primary">Call now</a>
+      <a href="tel:+355685999779" class="btn-primary" data-i18n="btn_call_now">Call now</a>
     </div>
   </div>
 </section>
@@ -156,28 +149,22 @@
     <div class="footer-top">
       <div>
         <div class="logo"><span class="mark"></span>TOP LEVEL <span class="sub">PERFORMANCE</span></div>
-        <p>Online and 1-on-1 strength coaching for people who want a plan, not a guess.</p>
+        <p data-i18n="footer_tagline">Online and 1-on-1 strength coaching.</p>
       </div>
       <div class="footer-col">
-        <h4>Programs</h4>
-        <a href="programs.html#online">Online coaching</a>
-        <a href="programs.html#oneonone">1-on-1 coaching</a>
+        <h4 data-i18n="footer_site">Site</h4>
+        <a href="programs.html" data-i18n="nav_programs">Programs</a>
+        <a href="training.html" data-i18n="nav_training">Training</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Site</h4>
-        <a href="training.html">Training</a>
-        <a href="programs.html">Programs</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
+        <h4 data-i18n="footer_follow">Follow</h4>
         <a href="https://www.instagram.com/top_level.performance?igsh=MTBoMjdkOWFjMjdtZw==" target="_blank" rel="noopener">Instagram</a>
-        <a href="#">YouTube</a>
+        <a href="tel:+355685999779" data-i18n="footer_call">Call</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Top Level Performance</span>
-      <span>Built for athletes who want more</span>
     </div>
   </div>
 </footer>
