@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Top Level Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="mark"></span>TOP LEVEL <span class="sub">PERFORMANCE</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="training.html">Training</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta desktop-only">Book a call</a>
+    <button class="nav-toggle" aria-label="Open menu"><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="programs.html">Programs</a>
+    <a href="training.html">Training</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Book a call</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Get in touch</span>
+    <h1>Let's build your plan</h1>
+    <p>Send a message or book a free call. Tell me your goals, schedule, and which program you're leaning toward.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h3>Reach me directly</h3>
+        <p>Prefer to talk it through first? Send a message or reach out on Instagram — usually a reply within a day.</p>
+
+        <div class="contact-detail">
+          <div class="icon">@</div>
+          <div>
+            <div class="label">Email</div>
+            <div class="value">coach@toplevelperformance.com</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">IG</div>
+          <div>
+            <div class="label">Instagram</div>
+            <div class="value">@toplevelperformance</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">#</div>
+          <div>
+            <div class="label">Phone</div>
+            <div class="value">+1 (000) 000-0000</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-success" id="form-success">Message sent. I'll get back to you within a day.</div>
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="program">Which program interests you?</label>
+            <select id="program" name="program">
+              <option value="online">Online coaching — €25/month</option>
+              <option value="1on1">1-on-1 coaching — €95/month</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your goals and training experience" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;">Send message</button>
+          <p class="form-note">This form is a placeholder — connect it to your email or booking tool to go live.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="logo"><span class="mark"></span>TOP LEVEL <span class="sub">PERFORMANCE</span></div>
+        <p>Online and 1-on-1 strength coaching for people who want a plan, not a guess.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <a href="programs.html#online">Online coaching</a>
+        <a href="programs.html#oneonone">1-on-1 coaching</a>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="training.html">Training</a>
+        <a href="programs.html">Programs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Top Level Performance</span>
+      <span>Built for athletes who want more</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
