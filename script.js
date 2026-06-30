@@ -114,7 +114,8 @@ var TRANSLATIONS = {
     label_message: "Message",
     placeholder_message: "Tell me about your goals and training experience",
     btn_send: "Send message",
-    form_success: "Message sent. I'll get back to you within a day."
+    form_success: "Message sent. I'll get back to you within a day.",
+    form_error: "Something went wrong. Please try again or call instead."
   },
   sq: {
     nav_home: "Ballina",
@@ -231,7 +232,8 @@ var TRANSLATIONS = {
     label_message: "Mesazhi",
     placeholder_message: "Më tregoni për qëllimet dhe përvojën tuaj",
     btn_send: "Dërgo mesazhin",
-    form_success: "Mesazhi u dërgua. Do t'ju kontaktoj brenda një dite."
+    form_success: "Mesazhi u dërgua. Do t'ju kontaktoj brenda një dite.",
+    form_error: "Diçka shkoi keq. Provoni përsëri ose telefononi."
   }
 };
 
@@ -347,9 +349,34 @@ document.addEventListener('DOMContentLoaded', function () {
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var success = document.getElementById('form-success');
-      if (success) success.classList.add('show');
-      form.reset();
+
+      var successEl = document.getElementById('form-success');
+      var errorEl = document.getElementById('form-error');
+      var submitBtn = document.getElementById('form-submit-btn');
+
+      if (successEl) successEl.classList.remove('show');
+      if (errorEl) errorEl.classList.remove('show');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          if (successEl) successEl.classList.add('show');
+          form.reset();
+        } else {
+          if (errorEl) errorEl.classList.add('show');
+        }
+      })
+      .catch(function () {
+        if (errorEl) errorEl.classList.add('show');
+      })
+      .finally(function () {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+      });
     });
   }
 
