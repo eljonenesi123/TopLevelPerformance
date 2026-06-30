@@ -9,6 +9,7 @@ var TRANSLATIONS = {
     hero_eyebrow: "Online & 1-on-1 coaching",
     hero_h1: "Train like it's<br>the only thing<br>that <span class=\"accent\">matters.</span>",
     hero_p: "Strength and conditioning programs built around your goals — not generic workouts.",
+    hero_location: "Based in Tirana, Albania",
     btn_view_programs: "View programs",
     btn_call_now: "Call now",
     stat_years: "Years coaching",
@@ -27,13 +28,21 @@ var TRANSLATIONS = {
     svc3_p: "Form checks and mobility work so every rep counts.",
 
     certs_h2: "Certified & qualified",
+    gym_h3: "Where I train",
+    gym_p: "Square Wellness Center, Tirana",
+    gym_link: "View on Instagram",
     cert1_h3: "Certified Personal Trainer",
     cert2_h3: "Corrective Exercise Specialist",
     cert_link: "View certificate",
 
     cta_ready: "Ready to start?",
 
-    footer_tagline: "Online and 1-on-1 strength coaching.",
+    testimonials_h2: "What clients say",
+    test1_quote: "Working with Top Level Performance changed how I train completely. The programming is structured and the feedback is honest. I'm stronger than I've ever been.",
+    test2_quote: "I started the online program not knowing what to expect. Every week brought a clear plan and real progress. Best decision I've made for my fitness.",
+    test3_quote: "The 1-on-1 sessions pushed me further than I thought possible. Technique, intensity, and accountability — everything I needed in one place.",
+
+    footer_tagline: "Online and 1-on-1 strength coaching in Tirana.",
     footer_site: "Site",
     footer_follow: "Follow",
     footer_call: "Call",
@@ -91,6 +100,8 @@ var TRANSLATIONS = {
     contact_reach: "Reach me directly",
     contact_reply: "Usually a reply within a day.",
     label_phone: "Phone",
+    label_location: "Location",
+    value_location: "Tirana, Albania",
     label_email: "Email",
     label_instagram: "Instagram",
     label_name: "Name",
@@ -115,6 +126,7 @@ var TRANSLATIONS = {
     hero_eyebrow: "Stërvitje online & individuale",
     hero_h1: "Stërvit sikur<br>është e vetmja<br>gjë që ka <span class=\"accent\">rëndësi.</span>",
     hero_p: "Programe force dhe kondicionimi të ndërtuara sipas qëllimeve tuaja — jo stërvitje gjenerike.",
+    hero_location: "Me bazë në Tiranë, Shqipëri",
     btn_view_programs: "Shiko programet",
     btn_call_now: "Telefono tani",
     stat_years: "Vite stërvitje",
@@ -133,13 +145,21 @@ var TRANSLATIONS = {
     svc3_p: "Kontrolle teknike dhe punë lëvizshmërie, që çdo përsëritje të ketë vlerë.",
 
     certs_h2: "I certifikuar & i kualifikuar",
+    gym_h3: "Ku stërvitem",
+    gym_p: "Square Wellness Center, Tiranë",
+    gym_link: "Shiko në Instagram",
     cert1_h3: "Trajner Personal i Certifikuar",
     cert2_h3: "Specialist i Ushtrimeve Korrigjuese",
     cert_link: "Shiko certifikatën",
 
     cta_ready: "Gati për të filluar?",
 
-    footer_tagline: "Stërvitje force, online dhe individuale.",
+    testimonials_h2: "Çfarë thonë klientët",
+    test1_quote: "Stërvitja me Top Level Performance ndryshoi plotësisht mënyrën time të stërvitjes. Programimi është i strukturuar dhe feedback-u i sinqertë. Jam më i fortë se kurrë më parë.",
+    test2_quote: "E fillova programin online pa ditur çfarë të prisja. Çdo javë sillte një plan të qartë dhe përparim real. Vendimi më i mirë që kam marrë për formën time fizike.",
+    test3_quote: "Seancat individuale më shtynë më larg nga sa mendoja se ishte e mundur. Teknikë, intensitet dhe përgjegjësi — gjithçka që më duhej në një vend.",
+
+    footer_tagline: "Stërvitje force, online dhe individuale, në Tiranë.",
     footer_site: "Faqja",
     footer_follow: "Na ndiqni",
     footer_call: "Telefono",
@@ -197,6 +217,8 @@ var TRANSLATIONS = {
     contact_reach: "Më kontakto direkt",
     contact_reply: "Zakonisht përgjigje brenda një dite.",
     label_phone: "Telefon",
+    label_location: "Vendndodhja",
+    value_location: "Tiranë, Shqipëri",
     label_email: "Email",
     label_instagram: "Instagram",
     label_name: "Emri",
@@ -279,6 +301,30 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  var statEls = document.querySelectorAll('.stat-num[data-count]');
+  if (statEls.length && 'IntersectionObserver' in window) {
+    var statIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 900;
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        statIO.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    statEls.forEach(function (el) { statIO.observe(el); });
+  }
 
   var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
   if (revealEls.length) {

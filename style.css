@@ -3,8 +3,8 @@
   --surface: #121922;
   --surface-2: #1A2330;
   --line: rgba(255,255,255,0.08);
-  --blue: #2E6BFF;
-  --blue-light: #7FB2FF;
+  --blue: #E0282F;
+  --blue-light: #FF6B5E;
   --text: #F2F4F7;
   --muted: #8C97A6;
 }
@@ -80,7 +80,7 @@ nav{
   letter-spacing:0.02em;
   white-space:nowrap;
 }
-.nav-cta:hover{background:#2459E0;}
+.nav-cta:hover{background:#B91F25;}
 
 .nav-toggle{
   display:none;
@@ -157,6 +157,31 @@ nav{
 .stat-num{font-family:'Oswald',sans-serif;font-size:28px;font-weight:600;color:var(--text);}
 .stat-label{font-size:12px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-top:4px;}
 .hero-photo{position:relative;min-height:420px;}
+.hero::before{
+  content:"";position:absolute;
+  top:5%;right:5%;width:40%;height:60%;
+  background:radial-gradient(circle, rgba(224,40,47,0.3) 0%, rgba(224,40,47,0) 70%);
+  filter:blur(40px);
+  z-index:0;
+  pointer-events:none;
+}
+.hero-grid{position:relative;z-index:1;}
+.hero-copy h1 .accent{
+  color:var(--blue);
+  position:relative;
+  display:inline-block;
+}
+.hero-copy h1 .accent::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-4px;
+  width:100%;height:3px;
+  background:var(--blue);
+  transform:scaleX(0);
+  transform-origin:left;
+  animation:underlineGrow .6s ease .5s forwards;
+}
+@keyframes underlineGrow{to{transform:scaleX(1);}}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 20%;}
 .hero-photo::before{
   content:"";position:absolute;inset:0;
@@ -175,7 +200,7 @@ nav{
   letter-spacing:0.04em;text-transform:uppercase;transition:background .2s;border:1px solid var(--blue);
   display:inline-block;text-align:center;
 }
-.btn-primary:hover{background:#2459E0;}
+.btn-primary:hover{background:#B91F25;box-shadow:0 8px 24px rgba(224,40,47,0.35);transform:translateY(-2px);}
 .btn-ghost{
   padding:15px 28px;font-size:14px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
   border:1px solid var(--line);color:var(--text);transition:border-color .2s,background .2s;
@@ -398,6 +423,44 @@ footer{padding:56px 0 28px;}
 .cert-link{font-size:13px;font-weight:600;color:var(--text);border-bottom:1px solid var(--blue-light);padding-bottom:2px;transition:color .2s;}
 .cert-link:hover{color:var(--blue-light);}
 
+.hero-location{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--muted);
+  margin-bottom:28px;
+}
+.hero-location svg{width:15px;height:15px;color:var(--blue-light);flex-shrink:0;}
+
+/* ===== LOCATION / GYM ===== */
+.gym-card{
+  display:flex;align-items:center;gap:24px;
+  background:var(--surface);border:1px solid var(--line);
+  padding:28px 32px;flex-wrap:wrap;
+}
+.gym-icon{
+  width:52px;height:52px;flex-shrink:0;
+  background:var(--surface-2);border:1px solid var(--blue);
+  display:flex;align-items:center;justify-content:center;color:var(--blue-light);
+}
+.gym-icon svg{width:26px;height:26px;}
+.gym-text{flex:1;min-width:220px;}
+.gym-text h3{font-size:16px;margin-bottom:4px;}
+.gym-text p{font-size:14px;color:var(--muted);}
+.gym-link{font-size:13px;font-weight:600;color:var(--text);border-bottom:1px solid var(--blue-light);padding-bottom:2px;white-space:nowrap;}
+.gym-link:hover{color:var(--blue-light);}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testimonial-card{background:var(--surface);border:1px solid var(--line);padding:28px;}
+.testimonial-avatar{
+  width:64px;height:64px;border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--blue);
+  margin-bottom:16px;
+}
+.testimonial-name{font-size:15px;font-weight:600;margin-bottom:10px;}
+.testimonial-quote{font-size:14.5px;color:var(--muted);margin-bottom:16px;}
+.testimonial-stars{color:var(--blue-light);font-size:14px;letter-spacing:2px;}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width:880px){
   .wrap{padding:0 20px;}
@@ -423,6 +486,8 @@ footer{padding:56px 0 28px;}
 
   .certs-grid{grid-template-columns:1fr;}
   .services-grid{grid-template-columns:1fr;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .gym-card{flex-direction:column;align-items:flex-start;text-align:left;}
   .programs-grid{grid-template-columns:1fr;}
   .action-grid{grid-template-columns:1fr;}
   .action-card img{height:280px;}
