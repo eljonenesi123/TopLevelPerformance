@@ -137,35 +137,50 @@ nav{
 .page-hero p{color:var(--muted);font-size:16px;margin-top:14px;max-width:520px;}
 
 /* ===== HOME HERO ===== */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
-.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;align-items:stretch;min-height:560px;}
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.hero-bg img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:60% 15%;
+}
+.hero-bg::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(
+    105deg,
+    rgba(11,15,20,0.97) 0%,
+    rgba(11,15,20,0.88) 35%,
+    rgba(11,15,20,0.45) 60%,
+    rgba(11,15,20,0.15) 100%
+  );
+}
+.hero-grid{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:1180px;
+  margin:0 auto;
+  padding:100px 32px;
+}
 .hero-copy{
-  padding:72px 0 72px 32px;
-  max-width:540px;
-  margin-left:auto;
+  max-width:580px;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  position:relative;
-  z-index:2;
 }
-.hero-copy h1{font-size:52px;line-height:1.04;margin:18px 0 22px;}
-.hero-copy h1 .accent{color:var(--blue);}
-.hero-copy p{color:var(--muted);font-size:17px;max-width:460px;margin-bottom:32px;}
-.hero-actions{display:flex;gap:14px;margin-bottom:44px;flex-wrap:wrap;}
-.hero-stats{display:flex;gap:36px;padding-top:26px;border-top:1px solid var(--line);flex-wrap:wrap;}
-.stat-num{font-family:'Oswald',sans-serif;font-size:28px;font-weight:600;color:var(--text);}
-.stat-label{font-size:12px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-top:4px;}
-.hero-photo{position:relative;min-height:420px;}
-.hero::before{
-  content:"";position:absolute;
-  top:5%;right:5%;width:40%;height:60%;
-  background:radial-gradient(circle, rgba(224,40,47,0.3) 0%, rgba(224,40,47,0) 70%);
-  filter:blur(40px);
-  z-index:0;
-  pointer-events:none;
-}
-.hero-grid{position:relative;z-index:1;}
+.hero-copy h1{font-size:58px;line-height:1.02;margin:18px 0 22px;}
 .hero-copy h1 .accent{
   color:var(--blue);
   position:relative;
@@ -182,17 +197,14 @@ nav{
   animation:underlineGrow .6s ease .5s forwards;
 }
 @keyframes underlineGrow{to{transform:scaleX(1);}}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 20%;}
-.hero-photo::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg, rgba(11,15,20,0) 0%, rgba(11,15,20,0.15) 60%, rgba(11,15,20,0.9) 100%);
-  z-index:1;
-}
-.hero-photo::after{
-  content:"";position:absolute;left:-2px;top:0;bottom:0;width:70px;
-  background:var(--bg);clip-path:polygon(100% 0, 100% 100%, 0 100%);z-index:2;
-}
-.hero-slash{position:absolute;top:0;left:0;width:5px;height:100%;background:var(--blue);transform:skewX(-12deg);z-index:3;}
+.hero-copy p{color:var(--muted);font-size:17px;max-width:460px;margin-bottom:32px;}
+.hero-actions{display:flex;gap:14px;margin-bottom:44px;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:36px;padding-top:26px;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap;}
+.stat-num{font-family:'Oswald',sans-serif;font-size:28px;font-weight:600;color:var(--text);}
+.stat-label{font-size:12px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-top:4px;}
+.hero-photo{display:none;}
+.hero-slash{display:none;}
+.hero::before{display:none;}
 
 /* ===== BUTTONS ===== */
 .btn-primary{
@@ -475,13 +487,10 @@ footer{padding:56px 0 28px;}
   .nav-cta.desktop-only{display:none;}
   .icon-btn.desktop-only{display:none;}
 
-  .hero-grid{grid-template-columns:1fr;min-height:auto;}
-  .hero-copy{margin:0;max-width:100%;padding:40px 20px 36px;}
-  .hero-copy h1{font-size:34px;}
+  .hero{min-height:100svh;}
+  .hero-grid{padding:80px 20px 60px;}
+  .hero-copy h1{font-size:36px;}
   .hero-copy p{font-size:15.5px;}
-  .hero-photo{min-height:300px;}
-  .hero-photo::after{display:none;}
-  .hero-stats{gap:24px;}
 
   .page-hero{padding:40px 0 32px;}
   .page-hero h1{font-size:28px;}
