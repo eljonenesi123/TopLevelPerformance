@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var scrollBtn = document.getElementById('scroll-top');
   if (scrollBtn) {
     window.addEventListener('scroll', function () {
-      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+      scrollBtn.classList.toggle('visible', window.scrollY > 200);
     }, { passive: true });
     scrollBtn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });

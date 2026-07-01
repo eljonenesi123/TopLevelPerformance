@@ -10,13 +10,13 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;}
+html{overflow-x:hidden;}
 body{
   background:var(--bg);
   color:var(--text);
   font-family:'Inter',sans-serif;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
 }
 h1,h2,h3,.display{
   font-family:'Oswald',sans-serif;
@@ -145,7 +145,6 @@ nav{
 /* ===== HOME HERO ===== */
 .hero{
   position:relative;
-  overflow:hidden;
   border-bottom:1px solid var(--line);
   min-height:90vh;
   display:flex;
@@ -496,14 +495,15 @@ footer{padding:56px 0 28px;}
 .load-bar{
   position:fixed;
   top:0;left:0;
-  height:3px;
+  height:4px;
   background:var(--blue);
-  z-index:9999;
+  z-index:99999;
   width:0%;
   transition:width .4s ease;
-  box-shadow:0 0 8px rgba(224,40,47,0.6);
+  box-shadow:0 0 10px rgba(224,40,47,0.7);
+  -webkit-transition:width .4s ease;
 }
-.load-bar.done{opacity:0;transition:opacity .3s ease .2s;}
+.load-bar.done{opacity:0;transition:opacity .3s ease .2s;-webkit-transition:opacity .3s ease .2s;}
 
 /* ===== PULSE ON CALL CTA ===== */
 @keyframes ctaPulse{
@@ -518,9 +518,9 @@ footer{padding:56px 0 28px;}
 /* ===== SCROLL TO TOP ===== */
 .scroll-top{
   position:fixed;
-  bottom:28px;
-  right:28px;
-  z-index:999;
+  bottom:24px;
+  right:20px;
+  z-index:9998;
   width:44px;height:44px;
   background:var(--surface-2);
   border:1px solid var(--line);
@@ -529,12 +529,15 @@ footer{padding:56px 0 28px;}
   cursor:pointer;
   opacity:0;
   transform:translateY(12px);
+  -webkit-transform:translateY(12px);
   transition:opacity .25s ease, transform .25s ease, background .2s, border-color .2s;
+  -webkit-transition:opacity .25s ease, -webkit-transform .25s ease, background .2s, border-color .2s;
   pointer-events:none;
 }
 .scroll-top.visible{
   opacity:1;
   transform:translateY(0);
+  -webkit-transform:translateY(0);
   pointer-events:auto;
 }
 .scroll-top:hover{background:var(--blue);border-color:var(--blue);}
