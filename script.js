@@ -1,3 +1,22 @@
+// Cookie banner
+(function () {
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+  try {
+    if (!localStorage.getItem('tlp_cookies')) {
+      setTimeout(function () { banner.classList.add('show'); }, 1200);
+    }
+  } catch(e) {}
+  function dismiss(accepted) {
+    banner.classList.remove('show');
+    try { localStorage.setItem('tlp_cookies', accepted ? 'accepted' : 'declined'); } catch(e) {}
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { dismiss(true); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { dismiss(false); });
+})();
+
 // Page load progress bar
 (function () {
   var bar = document.createElement('div');
