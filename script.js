@@ -1,3 +1,16 @@
+// Page load progress bar
+(function () {
+  var bar = document.createElement('div');
+  bar.className = 'load-bar';
+  document.body.appendChild(bar);
+  bar.style.width = '30%';
+  setTimeout(function () { bar.style.width = '70%'; }, 100);
+  window.addEventListener('load', function () {
+    bar.style.width = '100%';
+    setTimeout(function () { bar.classList.add('done'); }, 400);
+  });
+})();
+
 var TRANSLATIONS = {
   en: {
     nav_home: "Home",
@@ -379,5 +392,27 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // Scroll to top button
+  var scrollBtn = document.getElementById('scroll-top');
+  if (scrollBtn) {
+    window.addEventListener('scroll', function () {
+      scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Highlight active nav link based on current page
+  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function (link) {
+    var href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
 
 });
