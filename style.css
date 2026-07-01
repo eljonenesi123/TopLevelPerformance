@@ -121,6 +121,11 @@ nav{
   color:var(--text);
   border-bottom:1px solid var(--line);
 }
+.mobile-menu .icon-row a{
+  padding:0;
+  border-bottom:none;
+  font-size:0;
+}
 .mobile-menu a:last-of-type{border-bottom:none;}
 .mobile-menu .nav-cta{
   margin:16px 24px 20px;
@@ -481,44 +486,115 @@ footer{padding:56px 0 28px;}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width:880px){
-  .wrap{padding:0 20px;}
-  nav{padding:16px 20px;}
+  .wrap{padding:0 18px;}
+  nav{padding:14px 18px;}
   .nav-links{display:none;}
   .nav-toggle{display:flex;}
   .nav-cta.desktop-only{display:none;}
   .icon-btn.desktop-only{display:none;}
+  .lang-switch.desktop-only{display:none;}
 
+  /* Mobile menu */
+  .mobile-menu a{padding:15px 20px;font-size:15px;}
+  .mobile-menu .lang-switch{margin:12px 20px 4px;}
+  .mobile-menu .icon-row{
+    padding:12px 20px 16px;
+    gap:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu .icon-row .icon-btn{
+    width:44px;height:44px;
+    border:1px solid var(--line);
+  }
+  .mobile-menu .icon-row .icon-btn svg{width:22px;height:22px;}
+  .mobile-menu .nav-cta{
+    margin:14px 20px 20px;
+    padding:14px;
+    font-size:15px;
+    text-align:center;
+  }
+
+  /* Hero */
   .hero{min-height:100svh;}
-  .hero-grid{padding:80px 20px 60px;}
-  .hero-copy h1{font-size:36px;}
-  .hero-copy p{font-size:15.5px;}
+  .hero-grid{padding:80px 18px 56px;}
+  .hero-copy h1{font-size:34px;line-height:1.06;}
+  .hero-copy p{font-size:15px;max-width:100%;}
+  .hero-location{font-size:12px;}
+  .hero-stats{gap:20px;}
+  .stat-num{font-size:24px;}
+  .stat-label{font-size:11px;}
 
-  .page-hero{padding:40px 0 32px;}
-  .page-hero h1{font-size:28px;}
+  /* Page heroes */
+  .page-hero{padding:36px 0 28px;}
+  .page-hero h1{font-size:26px;}
+  .page-hero p{font-size:14.5px;}
 
-  .section{padding:52px 0;}
-  .section-head h2{font-size:25px;}
+  /* Sections */
+  .section{padding:48px 0;}
+  .section-head{margin-bottom:32px;}
+  .section-head h2{font-size:23px;}
 
+  /* Grids → single column */
   .certs-grid{grid-template-columns:1fr;}
   .services-grid{grid-template-columns:1fr;}
   .testimonials-grid{grid-template-columns:1fr;}
-  .gym-card{flex-direction:column;align-items:flex-start;text-align:left;}
   .programs-grid{grid-template-columns:1fr;}
   .action-grid{grid-template-columns:1fr;}
-  .action-card img{height:280px;}
   .process-list{grid-template-columns:1fr 1fr;}
-  .contact-grid{grid-template-columns:1fr;gap:36px;}
+  .contact-grid{grid-template-columns:1fr;gap:32px;}
   .form-row{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
-  .cta-band h2{font-size:24px;}
+
+  /* Cards */
+  .service-card{padding:24px 20px;}
+  .program-card{padding:28px 22px;}
+  .cert-card{padding:22px;}
+  .testimonial-card{padding:22px;}
+  .gym-card{flex-direction:column;align-items:flex-start;gap:14px;padding:22px 20px;}
+  .action-card img{height:260px;object-position:center 25%;}
+
+  /* Program card featured tag */
+  .program-tag{font-size:10px;padding:6px 12px;}
+
+  /* CTA band */
+  .cta-band{padding:48px 0;}
+  .cta-band h2{font-size:22px;}
+  .cta-actions{flex-direction:column;align-items:center;gap:12px;}
+  .cta-actions a{width:100%;max-width:320px;text-align:center;}
+
+  /* Footer */
+  .footer-top{gap:28px;padding-bottom:28px;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:6px;}
+
+  /* Contact */
+  .contact-info h3{font-size:18px;}
+  .form-field input,.form-field select,.form-field textarea{font-size:16px;}
 }
 
 @media (max-width:480px){
-  .hero-copy h1{font-size:29px;}
-  .hero-stats{gap:18px;}
-  .stat-num{font-size:24px;}
+  .hero-copy h1{font-size:28px;}
+  .hero-copy p{font-size:14.5px;}
+  .hero-actions{flex-direction:column;gap:10px;}
+  .hero-actions a{width:100%;text-align:center;}
+  .hero-stats{gap:16px;}
+  .stat-num{font-size:22px;}
+
   .process-list{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr;}
-  .hero-actions,.cta-actions{flex-direction:column;}
-  .hero-actions a,.cta-actions a{width:100%;}
+  .footer-col{margin-top:0;}
+
+  .section-head h2{font-size:21px;}
+  .page-hero h1{font-size:23px;}
+
+  .programs-grid .program-card h3{font-size:22px;}
+  .program-price span{font-size:22px;}
+
+  .testimonial-avatar{width:56px;height:56px;}
+  .testimonial-name{font-size:14px;}
+  .testimonial-quote{font-size:13.5px;}
+
+  .cert-card{flex-direction:column;gap:12px;}
+  .cert-badge{width:44px;height:44px;}
+
+  .btn-primary,.btn-ghost{padding:13px 22px;font-size:13px;}
 }
