@@ -1,20 +1,33 @@
+// Redirect to home on very first visit
+(function () {
+  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  try {
+    if (!sessionStorage.getItem('tlp_visited') && currentPage !== 'index.html' && currentPage !== '') {
+      sessionStorage.setItem('tlp_visited', '1');
+      window.location.href = 'index.html';
+      return;
+    }
+    sessionStorage.setItem('tlp_visited', '1');
+  } catch(e) {}
+})();
+
 // Cookie banner
 (function () {
   var banner = document.getElementById('cookie-banner');
   if (!banner) return;
   try {
-    if (!localStorage.getItem('tlp_cookies')) {
-      setTimeout(function () { banner.classList.add('show'); }, 1200);
-    }
+    if (localStorage.getItem('tlp_cookies')) return;
   } catch(e) {}
-  function dismiss(accepted) {
+  setTimeout(function () { banner.classList.add('show'); }, 1200);
+
+  function dismiss() {
     banner.classList.remove('show');
-    try { localStorage.setItem('tlp_cookies', accepted ? 'accepted' : 'declined'); } catch(e) {}
+    try { localStorage.setItem('tlp_cookies', 'seen'); } catch(e) {}
   }
   var acceptBtn = document.getElementById('cookie-accept');
   var declineBtn = document.getElementById('cookie-decline');
-  if (acceptBtn) acceptBtn.addEventListener('click', function () { dismiss(true); });
-  if (declineBtn) declineBtn.addEventListener('click', function () { dismiss(false); });
+  if (acceptBtn) acceptBtn.addEventListener('click', dismiss);
+  if (declineBtn) declineBtn.addEventListener('click', dismiss);
 })();
 
 // Page load progress bar
@@ -36,6 +49,7 @@ var TRANSLATIONS = {
     nav_programs: "Programs",
     nav_training: "Training",
     nav_contact: "Contact",
+    nav_about: "About",
     nav_call: "Call now",
 
     hero_eyebrow: "Online & 1-on-1 coaching",
@@ -154,6 +168,7 @@ var TRANSLATIONS = {
     nav_programs: "Programet",
     nav_training: "Stërvitje",
     nav_contact: "Kontakt",
+    nav_about: "Rreth meje",
     nav_call: "Telefono tani",
 
     hero_eyebrow: "Stërvitje online & individuale",
