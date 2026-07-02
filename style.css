@@ -348,6 +348,8 @@ nav{
 }
 .contact-detail .label{font-size:12px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;}
 .contact-detail .value{font-size:15px;margin-top:2px;}
+.contact-map{margin-top:24px;border-radius:10px;overflow:hidden;border:1px solid var(--line);}
+.contact-map iframe{display:block;filter:grayscale(0.15) contrast(1.05);}
 
 .form-field{margin-bottom:18px;}
 .form-field label{display:block;font-size:13px;color:var(--muted);margin-bottom:8px;letter-spacing:0.02em;}
@@ -840,6 +842,7 @@ footer{padding:56px 0 28px;}
 
   /* Contact */
   .contact-info h3{font-size:18px;}
+  .contact-map iframe{height:180px;}
   .form-field input,.form-field select,.form-field textarea{font-size:16px;}
 }
 
