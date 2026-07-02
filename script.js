@@ -284,6 +284,30 @@ var TRANSLATIONS = {
   }
 };
 
+function runTypewriter() {
+  var el = document.getElementById('hero-accent');
+  if (!el) return;
+  var fullText = el.textContent || el.innerText;
+  if (!fullText) return;
+  el.textContent = '';
+  el.classList.add('typing');
+  var i = 0;
+  var delay = 80;
+  function typeChar() {
+    if (i < fullText.length) {
+      el.textContent += fullText[i];
+      i++;
+      setTimeout(typeChar, delay);
+    } else {
+      // Remove cursor after done
+      setTimeout(function () {
+        el.classList.remove('typing');
+      }, 800);
+    }
+  }
+  setTimeout(typeChar, 400);
+}
+
 function applyLanguage(lang) {
   var dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
@@ -293,7 +317,14 @@ function applyLanguage(lang) {
   });
   document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
     var key = el.getAttribute('data-i18n-html');
-    if (dict[key] !== undefined) el.innerHTML = dict[key];
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+      // Re-attach id to accent span after innerHTML replacement
+      var accent = el.querySelector('.accent');
+      if (accent && el.id !== 'hero-accent') {
+        accent.id = 'hero-accent';
+      }
+    }
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
     var key = el.getAttribute('data-i18n-placeholder');
@@ -312,10 +343,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var savedLang = 'en';
   try { savedLang = localStorage.getItem('tlp_lang') || 'en'; } catch (e) {}
   applyLanguage(savedLang);
+  runTypewriter();
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       applyLanguage(btn.getAttribute('data-lang'));
+      runTypewriter();
     });
   });
 });
@@ -375,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
     statEls.forEach(function (el) { statIO.observe(el); });
   }
 
-  var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger');
   if (revealEls.length) {
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
@@ -385,11 +418,30 @@ document.addEventListener('DOMContentLoaded', function () {
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       revealEls.forEach(function (el) { io.observe(el); });
     } else {
       revealEls.forEach(function (el) { el.classList.add('in-view'); });
     }
+  }
+
+  // Parallax on hero background
+  var heroBgImg = document.querySelector('.hero-bg img');
+  if (heroBgImg) {
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var scrollY = window.scrollY;
+          var maxParallax = 80;
+          var offset = Math.min(scrollY * 0.3, maxParallax);
+          heroBgImg.style.transform = 'translateY(' + offset + 'px)';
+          heroBgImg.style.webkitTransform = 'translateY(' + offset + 'px)';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
   }
 
   var form = document.getElementById('contact-form');
