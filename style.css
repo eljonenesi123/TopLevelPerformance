@@ -95,6 +95,17 @@ nav{
   white-space:nowrap;
 }
 .nav-cta:hover{background:#B91F25;}
+.nav-cta-outline{
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--line);
+  padding:10px 21px;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:0.02em;
+  white-space:nowrap;
+}
+.nav-cta-outline:hover{border-color:var(--blue);color:var(--blue-light);}
 
 .nav-toggle{
   display:none;
@@ -162,6 +173,13 @@ nav{
   text-align:center;
   border-bottom:none;
   color:#fff;
+}
+.mobile-menu .nav-cta-outline{
+  margin:0 20px 14px;
+  padding:13px;
+  font-size:15px;
+  text-align:center;
+  border-bottom:none;
 }
 .mobile-menu.open{display:flex;}
 
@@ -572,6 +590,47 @@ footer{padding:56px 0 28px;}
 }
 
 
+/* ===== TRAINERIZE GUIDE ===== */
+.tz-guide{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  margin-bottom:40px;
+}
+.tz-step{
+  background:var(--surface);border:1px solid var(--line);
+  padding:26px 22px;
+  position:relative;
+}
+.tz-step .tz-num{
+  width:32px;height:32px;
+  background:var(--blue);color:#fff;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+}
+.tz-step h3{font-size:16px;margin-bottom:8px;}
+.tz-step p{font-size:14px;color:var(--muted);}
+.tz-callout{
+  background:var(--surface-2);border:1px solid var(--line);
+  padding:28px 30px;
+  display:flex;
+  gap:24px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.tz-callout-text h3{font-size:17px;margin-bottom:6px;}
+.tz-callout-text p{font-size:14px;color:var(--muted);max-width:520px;}
+.tz-callout-actions{display:flex;gap:12px;flex-wrap:wrap;}
+@media(max-width:880px){
+  .tz-guide{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:560px){
+  .tz-guide{grid-template-columns:1fr;}
+  .tz-callout{flex-direction:column;align-items:flex-start;}
+}
+
 /* ===== CERTIFICATIONS ===== */
 .certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .cert-card{
@@ -764,7 +823,7 @@ footer{padding:56px 0 28px;}
   nav{padding:14px 18px;}
   .nav-links{display:none;}
   .nav-toggle{display:flex;}
-  .nav-cta.desktop-only{display:none;}
+  .nav-cta.desktop-only, .nav-cta-outline.desktop-only{display:none;}
   .icon-btn.desktop-only{display:none;}
   .lang-switch.desktop-only{display:none;}
 
