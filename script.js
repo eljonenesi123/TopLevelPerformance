@@ -11,6 +11,30 @@
   } catch(e) {}
 })();
 
+// Google Analytics (GA4) — only loads if the visitor has accepted cookies
+(function () {
+  var GA_MEASUREMENT_ID = 'G-HFDSH02MCG'; 
+
+  function loadAnalytics() {
+    if (window.tlpAnalyticsLoaded || GA_MEASUREMENT_ID.indexOf('XXXX') !== -1) return;
+    window.tlpAnalyticsLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID);
+  }
+
+  window.tlpLoadAnalytics = loadAnalytics;
+
+  try {
+    if (localStorage.getItem('tlp_cookies') === 'accepted') loadAnalytics();
+  } catch (e) {}
+})();
+
 // Cookie banner
 (function () {
   var banner = document.getElementById('cookie-banner');
@@ -20,14 +44,17 @@
   } catch(e) {}
   setTimeout(function () { banner.classList.add('show'); }, 1200);
 
-  function dismiss() {
+  function dismiss(choice) {
     banner.classList.remove('show');
-    try { localStorage.setItem('tlp_cookies', 'seen'); } catch(e) {}
+    try { localStorage.setItem('tlp_cookies', choice); } catch(e) {}
   }
   var acceptBtn = document.getElementById('cookie-accept');
   var declineBtn = document.getElementById('cookie-decline');
-  if (acceptBtn) acceptBtn.addEventListener('click', dismiss);
-  if (declineBtn) declineBtn.addEventListener('click', dismiss);
+  if (acceptBtn) acceptBtn.addEventListener('click', function () {
+    dismiss('accepted');
+    if (window.tlpLoadAnalytics) window.tlpLoadAnalytics();
+  });
+  if (declineBtn) declineBtn.addEventListener('click', function () { dismiss('declined'); });
 })();
 
 // Page load progress bar
