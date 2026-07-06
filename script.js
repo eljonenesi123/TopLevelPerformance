@@ -66,6 +66,62 @@
   }
 })();
 
+// Hero background video cycler (plays 3 clips in sequence, crossfading)
+(function () {
+  var heroBg = document.querySelector('.hero-bg');
+  if (!heroBg) return;
+  var videos = Array.prototype.slice.call(heroBg.querySelectorAll('.hero-video'));
+  if (!videos.length) return;
+
+  var current = 0;
+
+  function loadVideo(v) {
+    if (!v.src && v.dataset.src) {
+      v.src = v.dataset.src;
+      v.load();
+    }
+  }
+
+  function playIndex(i) {
+    videos.forEach(function (v, idx) {
+      if (idx === i) v.classList.add('active');
+      else v.classList.remove('active');
+    });
+    var v = videos[i];
+    loadVideo(v);
+    var playPromise = v.play();
+    if (playPromise && playPromise.catch) {
+      playPromise.catch(function (err) {
+        console.warn('Hero video failed to autoplay:', v.dataset.src || v.src, err);
+      });
+    }
+    current = i;
+    loadVideo(videos[(i + 1) % videos.length]);
+  }
+
+  videos.forEach(function (v, i) {
+    v.addEventListener('error', function () {
+      console.warn('Hero video failed to load:', v.dataset.src || v.src, v.error);
+    });
+    v.addEventListener('ended', function () {
+      playIndex((i + 1) % videos.length);
+    });
+  });
+
+  playIndex(0);
+
+  // Pause/resume with tab visibility to save battery and data
+  document.addEventListener('visibilitychange', function () {
+    var v = videos[current];
+    if (document.hidden) {
+      v.pause();
+    } else {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+  });
+})();
+
 // Page load progress bar
 (function () {
   var bar = document.createElement('div');
