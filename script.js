@@ -148,6 +148,12 @@
   }
 })();
 
+// Auto-update copyright year in footer
+(function () {
+  var yearEl = document.getElementById('copyright-year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+
 // Page load progress bar
 (function () {
   var bar = document.createElement('div');
