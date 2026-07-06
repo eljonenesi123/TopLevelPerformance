@@ -328,7 +328,10 @@ var TRANSLATIONS = {
     cert3_h3: "Nutritionist",
     cta_ready_train: "Ready to train?",
     wa_greeting: "Hi! Need help? Message me on WhatsApp.",
-    wa_cta: "Message on WhatsApp"
+    wa_cta: "Message on WhatsApp",
+    instagram_h2: "Follow us on <span class=\"accent-text\">Instagram</span>",
+    instagram_p: "Training clips, client transformations, and behind-the-scenes moments.",
+    btn_view_profile: "View our profile"
   },
   sq: {
     nav_home: "Kryefaqja",
@@ -496,7 +499,10 @@ var TRANSLATIONS = {
     cert3_h3: "Nutricionist",
     cta_ready_train: "Gati për të stërvitur?",
     wa_greeting: "Përshëndetje! Keni nevojë për ndihmë? Më shkruani në WhatsApp.",
-    wa_cta: "Shkruaj në WhatsApp"
+    wa_cta: "Shkruaj në WhatsApp",
+    instagram_h2: "Na ndiqni në <span class=\"accent-text\">Instagram</span>",
+    instagram_p: "Klipe stërvitjeje, transformime klientësh dhe momente pas skenave.",
+    btn_view_profile: "Shiko profilin tonë"
   }
 };
 
