@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1E242D">
 <meta name="description" content="Meet Jeart Kumi — ISSA certified personal trainer, corrective exercise specialist and nutritionist based in Tirana, Albania.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://eljonenesi123.github.io/TopLevelPerformance/about.html">
@@ -18,7 +19,7 @@
 <title>About | Top Level Performance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 /* ===== ABOUT PAGE SPECIFIC ===== */
@@ -233,7 +234,7 @@
 
 <header>
   <nav>
-    <a href="index.html" class="logo"><img src="assets/logo.png" alt="Top Level Performance" class="logo-img" width="120" height="32">TOP LEVEL <span class="sub">PERFORMANCE</span></a>
+    <a href="index.html" class="logo"><img src="assets/logo.png" alt="Top Level Performance" class="logo-img" width="120" height="32" decoding="async">TOP LEVEL <span class="sub">PERFORMANCE</span></a>
     <div class="nav-links">
       <a href="index.html" data-i18n="nav_home">Home</a>
       <a href="about.html" class="active" data-i18n="nav_about">About</a>
@@ -275,30 +276,33 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-photo reveal-left">
-        <img src="assets/jearti2.jpg" alt="Jeart Kumi — Personal Trainer">
+        <img src="assets/jearti2.jpg" alt="Jeart Kumi — Personal Trainer" decoding="async">
       </div>
       <div class="about-copy reveal-right">
-        <div class="about-eyebrow">Meet the coach</div>
+        <div class="about-eyebrow" data-i18n="about_eyebrow">Meet the coach</div>
         <h1>Jeart Kumi</h1>
-        <p class="lead">I'm a certified personal trainer, corrective exercise specialist and nutritionist based in Tirana, Albania with experience intraining clients at Square Wellness Center and coaching athletes online across the world.</p>
-        <p>My background started in football. I spent 2 years coaching youth players from U5 all the way through to U15, developing training programs built around movement quality, athleticism, and long-term development. That foundation shaped how I think about training: technique first, intensity second, and progression always.</p>
-        <p>I moved into personal training because I wanted to work with people one-on-one and build programs that actually fit around their life, not generic plans copied from the internet. Every client I work with gets a program designed from scratch, tracked weekly, and adjusted based on real results.</p>
-        <p>Outside the gym, I hold three ISSA certifications: Certified Personal Trainer, Corrective Exercise Specialist, and Nutritionist, so whether you want to get stronger, lose weight, fix movement patterns, or clean up your diet, I can coach all of it in one place.</p>
+        <p class="lead" data-i18n="about_lead">I'm a certified personal trainer, corrective exercise specialist and nutritionist based in Tirana, Albania with experience training clients at Square Wellness Center and coaching athletes online across the world.</p>
+        <p data-i18n="about_p1">My background started in football. I spent 2 years coaching youth players from U5 all the way through to U15, developing training programs built around movement quality, athleticism, and long-term development. That foundation shaped how I think about training: technique first, intensity second, and progression always.</p>
+        <p data-i18n="about_p2">I moved into personal training because I wanted to work with people one-on-one and build programs that actually fit around their life, not generic plans copied from the internet. Every client I work with gets a program designed from scratch, tracked weekly, and adjusted based on real results.</p>
+        <p data-i18n="about_p3">Outside the gym, I hold three ISSA certifications: Certified Personal Trainer, Corrective Exercise Specialist, and Nutritionist, so whether you want to get stronger, lose weight, fix movement patterns, or clean up your diet, I can coach all of it in one place.</p>
         <div class="about-stats reveal-stagger">
           <div class="about-stat">
-            <span class="num" data-count="2" data-suffix="+">4</span>
-            <span class="lbl">Years coaching</span>
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px;margin:0 auto 8px;color:var(--blue-light);"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span class="num" data-count="5" data-suffix="+">5+</span>
+            <span class="lbl" data-i18n="stat_years">Years coaching</span>
           </div>
           <div class="about-stat">
-            <span class="num" data-count="200" data-suffix="+">10</span>
-            <span class="lbl">Athletes trained</span>
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px;margin:0 auto 8px;color:var(--blue-light);"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+            <span class="num" data-count="10" data-suffix="+">10+</span>
+            <span class="lbl" data-i18n="stat_athletes">Athletes trained</span>
           </div>
           <div class="about-stat">
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px;margin:0 auto 8px;color:var(--blue-light);"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 2z"/></svg>
             <span class="num" data-count="3" data-suffix="">3</span>
-            <span class="lbl">ISSA certs</span>
+            <span class="lbl" data-i18n="about_stat_certs">ISSA certs</span>
           </div>
         </div>
-        <a href="contact.html" class="btn-primary">Work with me</a>
+        <a href="contact.html" class="btn-primary" data-i18n="btn_work_with_me">Work with me</a>
       </div>
     </div>
   </div>
@@ -308,8 +312,8 @@
 <section class="section border-top">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">In action</span>
-      <h2>See how I train</h2>
+      <span class="eyebrow" data-i18n="eyebrow_in_action">In action</span>
+      <h2 data-i18n="video_h2">See how I train</h2>
     </div>
     <div class="video-wrap reveal" id="video-wrap">
       <div class="video-label">Top Level Performance</div>
@@ -329,14 +333,14 @@
 <section class="section border-top">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Background</span>
-      <h2>Youth football coaching</h2>
+      <span class="eyebrow" data-i18n="eyebrow_background">Background</span>
+      <h2 data-i18n="football_h2">Youth football coaching</h2>
     </div>
     <div class="football-banner reveal-left">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
       <div>
-        <h3>2 years as a youth football trainer</h3>
-        <p>Before moving into personal training, I developed training and conditioning programs for young football players across all youth age groups — building athletic foundations, coordination, and movement quality from an early age.</p>
+        <h3 data-i18n="football_h3">2 years as a youth football trainer</h3>
+        <p data-i18n="football_p">Before moving into personal training, I developed training and conditioning programs for young football players across all youth age groups — building athletic foundations, coordination, and movement quality from an early age.</p>
         <div class="age-groups">
           <span class="age-tag">U5</span>
           <span class="age-tag">U7</span>
@@ -354,24 +358,24 @@
 <section class="section border-top">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">How I coach</span>
-      <h2>Training philosophy</h2>
+      <span class="eyebrow" data-i18n="eyebrow_how_i_coach">How I coach</span>
+      <h2 data-i18n="philosophy_h2">Training philosophy</h2>
     </div>
     <div class="philosophy-grid reveal-stagger">
       <div class="philosophy-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 2z"/></svg></div>
-        <h3>Technique first</h3>
-        <p>Every program starts with movement quality. Good form under load is what separates progress from injury — I correct it live, on every rep.</p>
+        <h3 data-i18n="phil1_h3">Technique first</h3>
+        <p data-i18n="phil1_p">Every program starts with movement quality. Good form under load is what separates progress from injury — I correct it live, on every rep.</p>
       </div>
       <div class="philosophy-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Progressive overload</h3>
-        <p>Effort without direction is just hard work. Every plan tracks your numbers week to week so the progress is measurable, not guesswork.</p>
+        <h3 data-i18n="phil2_h3">Progressive overload</h3>
+        <p data-i18n="phil2_p">Effort without direction is just hard work. Every plan tracks your numbers week to week so the progress is measurable, not guesswork.</p>
       </div>
       <div class="philosophy-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Built around you</h3>
-        <p>No templates. Your schedule, your equipment, your goals. The program fits your life — not the other way around.</p>
+        <h3 data-i18n="phil3_h3">Built around you</h3>
+        <p data-i18n="phil3_p">No templates. Your schedule, your equipment, your goals. The program fits your life — not the other way around.</p>
       </div>
     </div>
   </div>
@@ -381,29 +385,29 @@
 <section class="section border-top">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Credentials</span>
-      <h2>Certifications</h2>
+      <span class="eyebrow" data-i18n="eyebrow_credentials">Credentials</span>
+      <h2 data-i18n="credentials_h2">Certifications</h2>
     </div>
     <div class="cert-timeline reveal-right">
       <div class="cert-row">
         <div class="cert-year">2023</div>
         <div class="cert-info">
-          <h4>Certified Personal Trainer</h4>
-          <p>International Sports Sciences Association (ISSA) — <a href="assets/certificates/certificate2.pdf" target="_blank" style="color:var(--blue-light);">View certificate</a></p>
+          <h4 data-i18n="cert1_h3">Certified Personal Trainer</h4>
+          <p><span data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</span> — <a href="assets/certificates/certificate2.pdf" target="_blank" style="color:var(--blue-light);" data-i18n="cert_link">View certificate</a></p>
         </div>
       </div>
       <div class="cert-row">
         <div class="cert-year">2024</div>
         <div class="cert-info">
-          <h4>Corrective Exercise Specialist</h4>
-          <p>International Sports Sciences Association (ISSA) — <a href="assets/certificates/certificate1.pdf" target="_blank" style="color:var(--blue-light);">View certificate</a></p>
+          <h4 data-i18n="cert2_h3">Corrective Exercise Specialist</h4>
+          <p><span data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</span> — <a href="assets/certificates/certificate1.pdf" target="_blank" style="color:var(--blue-light);" data-i18n="cert_link">View certificate</a></p>
         </div>
       </div>
       <div class="cert-row">
         <div class="cert-year">2024</div>
         <div class="cert-info">
-          <h4>Nutritionist</h4>
-          <p>International Sports Sciences Association (ISSA)</p>
+          <h4 data-i18n="cert3_h3">Nutritionist</h4>
+          <p><span data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</span></p>
         </div>
       </div>
     </div>
@@ -413,10 +417,10 @@
 <!-- CTA -->
 <section class="cta-band reveal">
   <div class="wrap">
-    <h2>Ready to train?</h2>
+    <h2 data-i18n="cta_ready_train">Ready to train?</h2>
     <div class="cta-actions">
-      <a href="programs.html" class="btn-primary">View programs</a>
-      <a href="tel:+355685999779" class="btn-ghost">Call now</a>
+      <a href="programs.html" class="btn-primary" data-i18n="btn_view_programs">View programs</a>
+      <a href="tel:+355685999779" class="btn-ghost" data-i18n="btn_call_now">Call now</a>
     </div>
   </div>
 </section>
@@ -425,7 +429,7 @@
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <div class="logo"><img src="assets/logo.png" alt="Top Level Performance" class="logo-img" width="120" height="30">TOP LEVEL <span class="sub">PERFORMANCE</span></div>
+        <div class="logo"><img src="assets/logo.png" alt="Top Level Performance" class="logo-img" width="120" height="30" loading="lazy" decoding="async">TOP LEVEL <span class="sub">PERFORMANCE</span></div>
         <p data-i18n="footer_tagline">Online and 1-on-1 strength coaching in Tirana.</p>
       </div>
       <div class="footer-col">
@@ -453,6 +457,22 @@
     <button class="cookie-decline" id="cookie-decline">Decline</button>
     <button class="cookie-accept" id="cookie-accept">Accept</button>
   </div>
+</div>
+<div class="wa-float" id="wa-float">
+  <div class="wa-bubble" id="wa-bubble">
+    <button class="wa-bubble-close" id="wa-bubble-close" aria-label="Close">×</button>
+    <div class="wa-bubble-header">
+      <div class="wa-bubble-avatar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg></div>
+      <div>
+        <div class="wa-bubble-name">Top Level Performance</div>
+        <div class="wa-bubble-sub" data-i18n="wa_greeting">Hi! Need help? Message me on WhatsApp.</div>
+      </div>
+    </div>
+    <a href="https://wa.me/355685999779" target="_blank" rel="noopener" class="wa-bubble-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg><span data-i18n="wa_cta">Message on WhatsApp</span></a>
+  </div>
+  <a href="https://wa.me/355685999779" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 </div>
 <button id="scroll-top" class="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <script>

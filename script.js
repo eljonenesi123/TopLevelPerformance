@@ -1,16 +1,3 @@
-// Redirect to home on very first visit
-(function () {
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  try {
-    if (!sessionStorage.getItem('tlp_visited') && currentPage !== 'index.html' && currentPage !== '') {
-      sessionStorage.setItem('tlp_visited', '1');
-      window.location.href = 'index.html';
-      return;
-    }
-    sessionStorage.setItem('tlp_visited', '1');
-  } catch(e) {}
-})();
-
 // Google Analytics (GA4) — only loads if the visitor has accepted cookies
 (function () {
   var GA_MEASUREMENT_ID = 'G-HFDSH02MCG'; 
@@ -55,6 +42,28 @@
     if (window.tlpLoadAnalytics) window.tlpLoadAnalytics();
   });
   if (declineBtn) declineBtn.addEventListener('click', function () { dismiss('declined'); });
+})();
+
+// Floating WhatsApp bubble
+(function () {
+  var bubble = document.getElementById('wa-bubble');
+  var closeBtn = document.getElementById('wa-bubble-close');
+  if (!bubble) return;
+  try {
+    if (sessionStorage.getItem('tlp_wa_dismissed')) return;
+  } catch (e) {}
+
+  var showTimer = setTimeout(function () { bubble.classList.add('show'); }, 3500);
+  var autoHideTimer = setTimeout(function () { bubble.classList.remove('show'); }, 13500);
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      bubble.classList.remove('show');
+      clearTimeout(showTimer);
+      clearTimeout(autoHideTimer);
+      try { sessionStorage.setItem('tlp_wa_dismissed', '1'); } catch (e) {}
+    });
+  }
 })();
 
 // Page load progress bar
@@ -204,7 +213,40 @@ var TRANSLATIONS = {
     placeholder_message: "Tell me about your goals and training experience",
     btn_send: "Send message",
     form_success: "Message sent. I'll get back to you within a day.",
-    form_error: "Something went wrong. Please try again or call instead."
+    form_error: "Something went wrong. Please try again or call instead.",
+
+    about_stat_certs: "ISSA certs",
+    about_eyebrow: "Meet the coach",
+    about_lead: "I'm a certified personal trainer, corrective exercise specialist and nutritionist based in Tirana, Albania with experience training clients at Square Wellness Center and coaching athletes online across the world.",
+    about_p1: "My background started in football. I spent 2 years coaching youth players from U5 all the way through to U15, developing training programs built around movement quality, athleticism, and long-term development. That foundation shaped how I think about training: technique first, intensity second, and progression always.",
+    about_p2: "I moved into personal training because I wanted to work with people one-on-one and build programs that actually fit around their life, not generic plans copied from the internet. Every client I work with gets a program designed from scratch, tracked weekly, and adjusted based on real results.",
+    about_p3: "Outside the gym, I hold three ISSA certifications: Certified Personal Trainer, Corrective Exercise Specialist, and Nutritionist, so whether you want to get stronger, lose weight, fix movement patterns, or clean up your diet, I can coach all of it in one place.",
+    btn_work_with_me: "Work with me",
+
+    eyebrow_in_action: "In action",
+    video_h2: "See how I train",
+
+    eyebrow_background: "Background",
+    football_h2: "Youth football coaching",
+    football_h3: "2 years as a youth football trainer",
+    football_p: "Before moving into personal training, I developed training and conditioning programs for young football players across all youth age groups — building athletic foundations, coordination, and movement quality from an early age.",
+
+    eyebrow_how_i_coach: "How I coach",
+    philosophy_h2: "Training philosophy",
+    phil1_h3: "Technique first",
+    phil1_p: "Every program starts with movement quality. Good form under load is what separates progress from injury — I correct it live, on every rep.",
+    phil2_h3: "Progressive overload",
+    phil2_p: "Effort without direction is just hard work. Every plan tracks your numbers week to week so the progress is measurable, not guesswork.",
+    phil3_h3: "Built around you",
+    phil3_p: "No templates. Your schedule, your equipment, your goals. The program fits your life — not the other way around.",
+
+    eyebrow_credentials: "Credentials",
+    credentials_h2: "Certifications",
+    issa_full_name: "International Sports Sciences Association (ISSA)",
+    cert3_h3: "Nutritionist",
+    cta_ready_train: "Ready to train?",
+    wa_greeting: "Hi! Need help? Message me on WhatsApp.",
+    wa_cta: "Message on WhatsApp"
   },
   sq: {
     nav_home: "Kryefaqja",
@@ -339,7 +381,40 @@ var TRANSLATIONS = {
     placeholder_message: "Më tregoni për qëllimet dhe përvojën tuaj",
     btn_send: "Dërgo mesazhin",
     form_success: "Mesazhi u dërgua. Do t'ju kontaktoj brenda një dite.",
-    form_error: "Diçka shkoi keq. Provoni përsëri ose telefononi."
+    form_error: "Diçka shkoi keq. Provoni përsëri ose telefononi.",
+
+    about_stat_certs: "Certifikime ISSA",
+    about_eyebrow: "Njihuni me trajnerin",
+    about_lead: "Jam trajner personal i certifikuar, specialist i ushtrimeve korrigjuese dhe nutricionist me bazë në Tiranë, Shqipëri, me përvojë në stërvitjen e klientëve në Square Wellness Center dhe trajnimin e atletëve online në mbarë botën.",
+    about_p1: "Fillimet e mia janë në futboll. Kalova 2 vite duke trajnuar lojtarë të rinj nga mosha U5 deri te U15, duke zhvilluar programe stërvitjeje të bazuara në cilësinë e lëvizjes, atletizmin dhe zhvillimin afatgjatë. Ai themel formoi mënyrën si e mendoj stërvitjen: teknika e para, intensiteti i dyti, dhe progresi gjithmonë.",
+    about_p2: "Kalova te stërvitja personale sepse doja të punoja individualisht me njerëzit dhe të ndërtoja programe që përshtaten vërtet me jetën e tyre, jo plane gjenerike të kopjuara nga interneti. Çdo klient me të cilin punoj merr një program të hartuar nga e para, të ndjekur çdo javë dhe të përshtatur sipas rezultateve reale.",
+    about_p3: "Përveç palestrës, kam tre certifikime ISSA: Trajner Personal i Certifikuar, Specialist i Ushtrimeve Korrigjuese dhe Nutricionist — pra qoftë që doni të bëheni më të fortë, të humbisni peshë, të korrigjoni modelet e lëvizjes apo të përmirësoni dietën, mund t'i trajnoj të gjitha në një vend.",
+    btn_work_with_me: "Puno me mua",
+
+    eyebrow_in_action: "Në veprim",
+    video_h2: "Shiko si stërvit",
+
+    eyebrow_background: "Përvoja",
+    football_h2: "Trajnim futbolli për të rinj",
+    football_h3: "2 vite si trajner futbolli për të rinj",
+    football_p: "Para se të kalohesha te stërvitja personale, zhvillova programe stërvitjeje dhe kondicionimi për lojtarë të rinj futbolli në të gjitha grupmoshat — duke ndërtuar themele atletike, koordinim dhe cilësi lëvizjeje që në moshë të hershme.",
+
+    eyebrow_how_i_coach: "Si stërvit",
+    philosophy_h2: "Filozofia e stërvitjes",
+    phil1_h3: "Teknika e para",
+    phil1_p: "Çdo program fillon me cilësinë e lëvizjes. Forma e mirë nën ngarkesë është ajo që ndan përparimin nga dëmtimi — e korrigjoj live, në çdo përsëritje.",
+    phil2_h3: "Ngarkesë progresive",
+    phil2_p: "Përpjekja pa drejtim është thjesht punë e rëndë. Çdo plan ndjek numrat tuaj javë pas jave, që përparimi të jetë i matshëm, jo hamendje.",
+    phil3_h3: "Ndërtuar rreth teje",
+    phil3_p: "Pa shabllone. Orari yt, pajisjet e tua, qëllimet e tua. Programi përshtatet me jetën tënde — jo e kundërta.",
+
+    eyebrow_credentials: "Kredencialet",
+    credentials_h2: "Certifikimet",
+    issa_full_name: "International Sports Sciences Association (ISSA)",
+    cert3_h3: "Nutricionist",
+    cta_ready_train: "Gati për të stërvitur?",
+    wa_greeting: "Përshëndetje! Keni nevojë për ndihmë? Më shkruani në WhatsApp.",
+    wa_cta: "Shkruaj në WhatsApp"
   }
 };
 
