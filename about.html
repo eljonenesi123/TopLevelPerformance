@@ -182,28 +182,76 @@
   pointer-events:none;
 }
 
-/* Philosophy */
-.philosophy-grid{
+/* Philosophy — triangular layout echoing the logo */
+.philosophy-triangle{
+  position:relative;
+  max-width:900px;
+  margin:0 auto;
+  padding-top:0;
+}
+.tri-logo{
+  position:absolute;
+  top:0;left:0;right:0;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  z-index:0;
+  pointer-events:none;
+  filter:drop-shadow(0 0 26px rgba(224,40,47,0.4));
+}
+.tri-grid{
+  position:relative;z-index:1;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:28px;
 }
+.tri-top{grid-column:2/3;}
+.tri-left{grid-column:1/2;align-self:end;}
+.tri-right{grid-column:3/4;align-self:end;}
+
 .philosophy-card{
   background:var(--surface);
   border:1px solid var(--line);
-  padding:28px 24px;
+  padding:22px 20px;
   border-top:3px solid var(--blue);
+  text-align:center;
+  box-shadow:0 14px 32px rgba(0,0,0,0.28);
+  transition:transform .3s ease, box-shadow .3s ease, border-top-color .3s ease;
+}
+.philosophy-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(224,40,47,0.22);
+  border-top-color:var(--blue-light);
 }
 .philosophy-card .icon{
-  width:40px;height:40px;
+  width:38px;height:38px;
   background:var(--surface-2);
+  border:1px solid var(--blue);
   display:flex;align-items:center;justify-content:center;
   color:var(--blue-light);
-  margin-bottom:16px;
+  margin:0 auto 12px;
 }
-.philosophy-card .icon svg{width:20px;height:20px;}
-.philosophy-card h3{font-size:16px;margin-bottom:10px;}
-.philosophy-card p{font-size:14px;color:var(--muted);}
+.philosophy-card .icon svg{width:18px;height:18px;}
+.philosophy-card h3{font-size:14px;margin-bottom:6px;}
+.philosophy-card p{font-size:12px;line-height:1.5;color:var(--muted);}
+
+@media(max-width:880px){
+  .philosophy-triangle{padding-top:0;}
+  .tri-logo{
+    position:static;
+    display:block;
+    top:auto;left:auto;right:auto;
+    width:clamp(90px, 24vw, 160px);
+    height:auto;
+    max-width:160px;
+    min-width:80px;
+    margin:0 auto 28px;
+    transform:none;
+    filter:drop-shadow(0 0 14px rgba(224,40,47,0.3));
+  }
+  .tri-grid{grid-template-columns:1fr;gap:20px;}
+  .tri-top,.tri-left,.tri-right{grid-column:1/2;align-self:auto;}
+}
 
 /* Certs timeline */
 .cert-timeline{display:flex;flex-direction:column;gap:0;}
@@ -254,7 +302,6 @@
   .about-photo::after{display:none;}
   .about-copy h1{font-size:28px;}
   .about-copy .lead{font-size:15.5px;}
-  .philosophy-grid{grid-template-columns:1fr;}
   .about-stats{grid-template-columns:repeat(3,1fr);}
   .football-banner{flex-direction:column;gap:16px;}
 }
@@ -389,27 +436,30 @@
 </section>
 
 <!-- PHILOSOPHY -->
-<section class="section border-top">
+<section class="section border-top philosophy-section">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow" data-i18n="eyebrow_how_i_coach">How I coach</span>
       <h2 data-i18n="philosophy_h2">Training philosophy</h2>
     </div>
-    <div class="philosophy-grid reveal-stagger">
-      <div class="philosophy-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 2z"/></svg></div>
-        <h3 data-i18n="phil1_h3">Technique first</h3>
-        <p data-i18n="phil1_p">Every program starts with movement quality. Good form under load is what separates progress from injury — I correct it live, on every rep.</p>
-      </div>
-      <div class="philosophy-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3 data-i18n="phil2_h3">Progressive overload</h3>
-        <p data-i18n="phil2_p">Effort without direction is just hard work. Every plan tracks your numbers week to week so the progress is measurable, not guesswork.</p>
-      </div>
-      <div class="philosophy-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3 data-i18n="phil3_h3">Built around you</h3>
-        <p data-i18n="phil3_p">No templates. Your schedule, your equipment, your goals. The program fits your life — not the other way around.</p>
+    <div class="philosophy-triangle reveal">
+      <img src="assets/logo.png" alt="" class="tri-logo" aria-hidden="true">
+      <div class="tri-grid">
+        <div class="philosophy-card tri-top">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 2z"/></svg></div>
+          <h3 data-i18n="phil1_h3">Technique first</h3>
+          <p data-i18n="phil1_p">Good form under load separates progress from injury — corrected live, every rep.</p>
+        </div>
+        <div class="philosophy-card tri-left">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <h3 data-i18n="phil2_h3">Progressive overload</h3>
+          <p data-i18n="phil2_p">Every plan tracks your numbers week to week — progress measured, not guessed.</p>
+        </div>
+        <div class="philosophy-card tri-right">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3 data-i18n="phil3_h3">Built around you</h3>
+          <p data-i18n="phil3_p">No templates. Your schedule, your equipment, your goals — not the other way around.</p>
+        </div>
       </div>
     </div>
   </div>
