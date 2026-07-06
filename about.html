@@ -82,6 +82,14 @@
   color:var(--blue);
   display:block;
 }
+@media (prefers-reduced-motion: no-preference){
+  .about-stat .num.pop{animation:aboutStatPop .4s cubic-bezier(.34,1.56,.64,1);}
+}
+@keyframes aboutStatPop{
+  0%{transform:scale(1);}
+  40%{transform:scale(1.18);color:var(--blue-light);}
+  100%{transform:scale(1);}
+}
 .about-stat .lbl{
   font-size:11px;color:var(--muted);
   letter-spacing:0.06em;text-transform:uppercase;

@@ -122,6 +122,32 @@
   });
 })();
 
+// Inline background videos (training gallery + CTA band): only play while visible
+(function () {
+  var vids = document.querySelectorAll('.action-video, .cta-band-bg video');
+  if (!vids.length) return;
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    vids.forEach(function (v) { io.observe(v); });
+  } else {
+    vids.forEach(function (v) {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    });
+  }
+})();
+
 // Page load progress bar
 (function () {
   var bar = document.createElement('div');
@@ -244,9 +270,9 @@ var TRANSLATIONS = {
     tag_strength: "Strength",
     tag_conditioning: "Conditioning",
     tag_core: "Core & stability",
-    ex1_h4: "Back squat",
-    ex2_h4: "Loaded box step-up",
-    ex3_h4: "Stability ball plank",
+    ex1_h4: "Loaded knee march",
+    ex2_h4: "Leg press",
+    ex3_h4: "Pull-ups",
     cta_want_plan: "Want a plan built like this?",
 
     contact_h1: "Let's talk",
@@ -412,9 +438,9 @@ var TRANSLATIONS = {
     tag_strength: "Forcë",
     tag_conditioning: "Kondicionim",
     tag_core: "Bërthamë & stabilitet",
-    ex1_h4: "Squat me shtangë",
-    ex2_h4: "Hap mbi kuti me peshë",
-    ex3_h4: "Plank me top stabiliteti",
+    ex1_h4: "Marshim me shtangë",
+    ex2_h4: "Shtypje këmbësh",
+    ex3_h4: "Ngritje në shufër",
     cta_want_plan: "Dëshiron një plan si ky?",
 
     contact_h1: "Le të flasim",
@@ -574,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  var statEls = document.querySelectorAll('.stat-num[data-count]');
+  var statEls = document.querySelectorAll('.stat-num[data-count], .num[data-count]');
   if (statEls.length && 'IntersectionObserver' in window) {
     var statIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -589,7 +615,11 @@ document.addEventListener('DOMContentLoaded', function () {
           var progress = Math.min((ts - start) / duration, 1);
           var eased = 1 - Math.pow(1 - progress, 3);
           el.textContent = Math.round(eased * target) + suffix;
-          if (progress < 1) requestAnimationFrame(step);
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.classList.add('pop');
+          }
         }
         requestAnimationFrame(step);
         statIO.unobserve(el);

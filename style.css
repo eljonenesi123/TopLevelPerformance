@@ -329,7 +329,15 @@ nav{
   margin:0 auto 8px;
   color:var(--blue-light);
 }
-.stat-num{font-family:'Oswald',sans-serif;font-size:28px;font-weight:600;color:var(--text);}
+.stat-num{font-family:'Oswald',sans-serif;font-size:28px;font-weight:600;color:var(--text);display:inline-block;}
+@media (prefers-reduced-motion: no-preference){
+  .stat-num.pop{animation:statPop .4s cubic-bezier(.34,1.56,.64,1);}
+}
+@keyframes statPop{
+  0%{transform:scale(1);}
+  40%{transform:scale(1.18);color:var(--blue-light);}
+  100%{transform:scale(1);}
+}
 .stat-label{font-size:12px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-top:4px;}
 .hero-photo{display:none;}
 .hero-slash{display:none;}
@@ -390,8 +398,10 @@ nav{
 /* ===== TRAINING IN ACTION ===== */
 .action-grid{display:grid;grid-template-columns:1.1fr 0.9fr 0.9fr;gap:20px;}
 .action-card{background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden;}
-.action-card img{width:100%;height:440px;object-fit:cover;-webkit-object-fit:cover;transition:transform .5s ease;}
-.action-card:hover img{transform:scale(1.04);}
+.action-card img,
+.action-card .action-video{width:100%;height:440px;object-fit:cover;-webkit-object-fit:cover;display:block;transition:transform .5s ease;}
+.action-card:hover img,
+.action-card:hover .action-video{transform:scale(1.04);}
 .action-overlay{
   position:absolute;left:0;right:0;bottom:0;padding:22px;
   background:linear-gradient(0deg, rgba(30,36,45,0.95) 0%, rgba(30,36,45,0) 100%);
@@ -465,6 +475,16 @@ nav{
 .cta-band p{color:var(--muted);margin-bottom:28px;font-size:16px;}
 .cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
 
+.cta-band-video{position:relative;overflow:hidden;background:#000;}
+.cta-band-bg{position:absolute;inset:0;}
+.cta-band-bg video{width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:0.4;}
+.cta-band-bg::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(rgba(30,36,45,0.85),rgba(30,36,45,0.9));
+}
+.cta-band-video .wrap{position:relative;z-index:1;}
+
 /* ===== FOOTER ===== */
 footer{padding:56px 0 28px;}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid var(--line);}
@@ -532,8 +552,8 @@ footer{padding:56px 0 28px;}
 
   .action-card{transition:transform .3s ease, box-shadow .3s ease;}
   .action-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.4);}
-  .action-card img{transition:transform .6s ease;}
-  .action-card:hover img{transform:scale(1.06);}
+  .action-card img, .action-card .action-video{transition:transform .6s ease;}
+  .action-card:hover img, .action-card:hover .action-video{transform:scale(1.06);}
 
   .faq-item{transition:background .2s ease;}
 
@@ -1038,7 +1058,7 @@ footer{padding:56px 0 28px;}
   .cert-card{padding:22px;}
   .testimonial-card{padding:22px;}
   .gym-card{flex-direction:column;align-items:flex-start;gap:14px;padding:22px 20px;}
-  .action-card img{height:260px;object-position:center 25%;}
+  .action-card img, .action-card .action-video{height:260px;object-position:center 25%;}
 
   /* Program card featured tag */
   .program-tag{font-size:10px;padding:6px 12px;}
