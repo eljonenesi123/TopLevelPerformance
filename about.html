@@ -182,93 +182,105 @@
   pointer-events:none;
 }
 
-/* Philosophy — triangular layout echoing the logo */
-.philosophy-triangle{
+/* Philosophy — clean centered logo + simple labels around it, plain notes below */
+.philosophy-diagram{
   position:relative;
-  max-width:900px;
-  margin:0 auto;
-  padding-top:0;
+  max-width:520px;
+  margin:0 auto 56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:88px 30px;
 }
-.tri-logo{
-  position:absolute;
-  top:0;left:0;right:0;
+.phil-logo{
   width:100%;
-  height:100%;
-  object-fit:fill;
-  z-index:0;
-  pointer-events:none;
+  max-width:340px;
+  height:auto;
+  display:block;
   filter:drop-shadow(0 0 26px rgba(224,40,47,0.4));
 }
-.tri-grid{
-  position:relative;z-index:1;
+.phil-label{
+  position:absolute;
+  font-family:'Oswald',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  color:var(--blue-light);
+  white-space:nowrap;
+}
+.phil-label-top{top:0;left:50%;transform:translateX(-50%);}
+.phil-label-left{bottom:26px;left:-15px;}
+.phil-label-right{bottom:26px;right:-15px;}
+
+.philosophy-notes{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:28px;
+  gap:32px;
+  max-width:900px;
+  margin:0 auto;
 }
-.tri-top{grid-column:2/3;}
-.tri-left{grid-column:1/2;align-self:end;}
-.tri-right{grid-column:3/4;align-self:end;}
+.phil-note{text-align:center;}
+.phil-note p{font-size:13.5px;line-height:1.6;color:var(--muted);}
 
-.philosophy-card{
+@media(max-width:880px){
+  .philosophy-diagram{max-width:340px;padding:60px 16px;margin-bottom:40px;}
+  .phil-logo{max-width:230px;}
+  .phil-label{font-size:13.5px;}
+  .phil-label-left{left:-8px;bottom:18px;}
+  .phil-label-right{right:-8px;bottom:18px;}
+  .philosophy-notes{grid-template-columns:1fr;gap:22px;}
+}
+@media(max-width:480px){
+  .philosophy-diagram{max-width:290px;padding:52px 10px;}
+  .phil-logo{max-width:190px;}
+  .phil-label{font-size:12px;}
+}
+
+/* Certifications — card grid matching the site's card pattern */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.cert-card{
   background:var(--surface);
   border:1px solid var(--line);
-  padding:22px 20px;
   border-top:3px solid var(--blue);
+  padding:28px 24px;
   text-align:center;
-  box-shadow:0 14px 32px rgba(0,0,0,0.28);
+  box-shadow:0 14px 32px rgba(0,0,0,0.24);
   transition:transform .3s ease, box-shadow .3s ease, border-top-color .3s ease;
 }
-.philosophy-card:hover{
+.cert-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 18px 40px rgba(224,40,47,0.22);
+  box-shadow:0 18px 40px rgba(224,40,47,0.2);
   border-top-color:var(--blue-light);
 }
-.philosophy-card .icon{
-  width:38px;height:38px;
+.cert-badge{
+  width:46px;height:46px;
+  margin:0 auto 16px;
   background:var(--surface-2);
   border:1px solid var(--blue);
   display:flex;align-items:center;justify-content:center;
   color:var(--blue-light);
-  margin:0 auto 12px;
 }
-.philosophy-card .icon svg{width:18px;height:18px;}
-.philosophy-card h3{font-size:14px;margin-bottom:6px;}
-.philosophy-card p{font-size:12px;line-height:1.5;color:var(--muted);}
+.cert-badge svg{width:22px;height:22px;}
+.cert-card h4{font-size:16px;margin-bottom:8px;}
+.cert-issuer{font-size:13px;color:var(--muted);margin-bottom:6px;}
+.cert-meta{font-size:12px;color:var(--muted);opacity:0.8;margin-bottom:18px;}
+.cert-link{
+  display:inline-block;
+  font-size:13px;font-weight:600;
+  color:var(--blue-light);
+  border-bottom:1px solid var(--blue-light);
+  padding-bottom:2px;
+}
+.cert-link:hover{color:#fff;border-color:#fff;}
 
 @media(max-width:880px){
-  .philosophy-triangle{padding-top:0;}
-  .tri-logo{
-    position:static;
-    display:block;
-    top:auto;left:auto;right:auto;
-    width:clamp(90px, 24vw, 160px);
-    height:auto;
-    max-width:160px;
-    min-width:80px;
-    margin:0 auto 28px;
-    transform:none;
-    filter:drop-shadow(0 0 14px rgba(224,40,47,0.3));
-  }
-  .tri-grid{grid-template-columns:1fr;gap:20px;}
-  .tri-top,.tri-left,.tri-right{grid-column:1/2;align-self:auto;}
+  .cert-grid{grid-template-columns:1fr;gap:20px;}
 }
-
-/* Certs timeline */
-.cert-timeline{display:flex;flex-direction:column;gap:0;}
-.cert-row{
-  display:flex;gap:20px;align-items:flex-start;
-  padding:20px 0;border-bottom:1px solid var(--line);
-}
-.cert-row:first-child{padding-top:0;}
-.cert-row:last-child{border-bottom:none;}
-.cert-year{
-  font-family:'Oswald',sans-serif;
-  font-size:13px;color:var(--blue-light);
-  letter-spacing:0.06em;min-width:50px;
-  padding-top:3px;
-}
-.cert-info h4{font-size:15px;margin-bottom:4px;}
-.cert-info p{font-size:13px;color:var(--muted);}
 
 /* Football section */
 .football-banner{
@@ -442,24 +454,23 @@
       <span class="eyebrow" data-i18n="eyebrow_how_i_coach">How I coach</span>
       <h2 data-i18n="philosophy_h2">Training philosophy</h2>
     </div>
-    <div class="philosophy-triangle reveal">
-      <img src="assets/logo.png" alt="" class="tri-logo" aria-hidden="true">
-      <div class="tri-grid">
-        <div class="philosophy-card tri-top">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 5.5L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 2z"/></svg></div>
-          <h3 data-i18n="phil1_h3">Technique first</h3>
-          <p data-i18n="phil1_p">Good form under load separates progress from injury — corrected live, every rep.</p>
-        </div>
-        <div class="philosophy-card tri-left">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <h3 data-i18n="phil2_h3">Progressive overload</h3>
-          <p data-i18n="phil2_p">Every plan tracks your numbers week to week — progress measured, not guessed.</p>
-        </div>
-        <div class="philosophy-card tri-right">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3 data-i18n="phil3_h3">Built around you</h3>
-          <p data-i18n="phil3_p">No templates. Your schedule, your equipment, your goals — not the other way around.</p>
-        </div>
+
+    <div class="philosophy-diagram reveal">
+      <div class="phil-label phil-label-top" data-i18n="phil1_h3">Technique first</div>
+      <div class="phil-label phil-label-left" data-i18n="phil2_h3">Progressive overload</div>
+      <img src="assets/logo.png" alt="Top Level Performance" class="phil-logo">
+      <div class="phil-label phil-label-right" data-i18n="phil3_h3">Built around you</div>
+    </div>
+
+    <div class="philosophy-notes reveal-stagger">
+      <div class="phil-note">
+        <p data-i18n="phil1_p">Good form under load — corrected live, every rep.</p>
+      </div>
+      <div class="phil-note">
+        <p data-i18n="phil2_p">Numbers tracked weekly — progress measured, not guessed.</p>
+      </div>
+      <div class="phil-note">
+        <p data-i18n="phil3_p">No templates. Your schedule, your goals, your equipment.</p>
       </div>
     </div>
   </div>
@@ -472,27 +483,33 @@
       <span class="eyebrow" data-i18n="eyebrow_credentials">Credentials</span>
       <h2 data-i18n="credentials_h2">Certifications</h2>
     </div>
-    <div class="cert-timeline reveal-right">
-      <div class="cert-row">
-        <div class="cert-year">2023</div>
-        <div class="cert-info">
-          <h4 data-i18n="cert1_h3">Certified Personal Trainer</h4>
-          <p><span data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</span> — <a href="assets/certificates/certificate2.pdf" target="_blank" style="color:var(--blue-light);" data-i18n="cert_link">View certificate</a></p>
+    <div class="cert-grid reveal-stagger">
+      <div class="cert-card">
+        <div class="cert-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L12 2z"/></svg>
         </div>
+        <h4 data-i18n="cert1_h3">Certified Personal Trainer</h4>
+        <p class="cert-issuer" data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</p>
+        <p class="cert-meta"><span data-i18n="cert_issued">Issued</span> 11/28/2023 · <span data-i18n="cert_expires">Expires</span> 11/28/2027</p>
+        <a href="assets/certificates/PERSONAL.pdf" target="_blank" rel="noopener" class="cert-link" data-i18n="cert_link">View certificate</a>
       </div>
-      <div class="cert-row">
-        <div class="cert-year">2024</div>
-        <div class="cert-info">
-          <h4 data-i18n="cert2_h3">Corrective Exercise Specialist</h4>
-          <p><span data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</span> — <a href="assets/certificates/certificate1.pdf" target="_blank" style="color:var(--blue-light);" data-i18n="cert_link">View certificate</a></p>
+      <div class="cert-card">
+        <div class="cert-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L12 2z"/></svg>
         </div>
+        <h4 data-i18n="cert2_h3">Corrective Exercise Specialist</h4>
+        <p class="cert-issuer" data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</p>
+        <p class="cert-meta"><span data-i18n="cert_issued">Issued</span> 03/09/2024 · <span data-i18n="cert_expires">Expires</span> 11/28/2027</p>
+        <a href="assets/certificates/EXCERCISE.pdf" target="_blank" rel="noopener" class="cert-link" data-i18n="cert_link">View certificate</a>
       </div>
-      <div class="cert-row">
-        <div class="cert-year">2024</div>
-        <div class="cert-info">
-          <h4 data-i18n="cert3_h3">Nutritionist</h4>
-          <p><span data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</span></p>
+      <div class="cert-card">
+        <div class="cert-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.6 5.3 5.9.8-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.8L12 2z"/></svg>
         </div>
+        <h4 data-i18n="cert3_h3">Nutrition Coach</h4>
+        <p class="cert-issuer" data-i18n="issa_full_name">International Sports Sciences Association (ISSA)</p>
+        <p class="cert-meta"><span data-i18n="cert_issued">Issued</span> 08/30/2024 · <span data-i18n="cert_expires">Expires</span> 11/28/2027</p>
+        <a href="assets/certificates/NUTRITION.pdf" target="_blank" rel="noopener" class="cert-link" data-i18n="cert_link">View certificate</a>
       </div>
     </div>
   </div>

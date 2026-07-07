@@ -534,6 +534,7 @@ nav{
   margin-right:auto;
 }
 .insta-head h2::after{display:none;}
+.insta-head h2{margin-bottom:12px;}
 .accent-text{color:var(--blue);}
 .insta-divider{
   display:flex;align-items:center;justify-content:center;gap:14px;
@@ -542,7 +543,6 @@ nav{
 }
 .insta-divider .insta-line{width:44px;height:1px;background:var(--line);}
 .insta-divider svg{width:20px;height:20px;}
-.insta-head p{max-width:520px;margin:0 auto 14px;}
 .insta-handle{
   display:inline-flex;align-items:center;gap:6px;
   color:var(--blue-light);
@@ -551,66 +551,30 @@ nav{
 .insta-handle svg{width:14px;height:14px;}
 .insta-handle:hover{color:var(--blue);}
 
-.insta-gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+.insta-widget-wrap{
   margin-top:40px;
-  max-width:760px;
+  min-height:220px;
+  max-width:600px;
   margin-left:auto;
   margin-right:auto;
+  display:flex;
+  justify-content:center;
 }
-.insta-tile{
-  position:relative;
-  display:block;
-  aspect-ratio:1/1;
-  overflow:hidden;
+.insta-widget-wrap > div{width:100%;}
+.insta-widget-wrap:empty::before{
+  content:"Instagram feed will appear here once connected.";
+  display:flex;
+  align-items:center;justify-content:center;
+  min-height:220px;
+  text-align:center;padding:24px;
   background:var(--surface);
   border:1px solid var(--line);
+  border-radius:4px;
+  color:var(--muted);font-size:13.5px;
 }
-.insta-tile img{
-  width:100%;height:100%;
-  object-fit:cover;
-  transition:transform .5s ease;
-}
-.insta-tile-icon{
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(30,36,45,0.55);
-  color:#fff;
-  opacity:0;
-  transition:opacity .25s ease;
-}
-.insta-tile-icon svg{width:26px;height:26px;}
-@media (hover:hover){
-  .insta-tile:hover img{transform:scale(1.08);}
-  .insta-tile:hover .insta-tile-icon{opacity:1;}
-}
-
-@media(max-width:880px){
-  .insta-gallery{gap:10px;}
-}
-@media(max-width:480px){
-  .insta-gallery{gap:8px;}
-}
-
-.insta-cta-wrap{text-align:center;margin-top:32px;}
-.insta-cta-btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:14px 30px;
-  border-radius:6px;
-  background:linear-gradient(135deg,#8a3ab9,#e0287a 45%,#fbad50 100%);
-  color:#fff;
-  font-weight:600;font-size:14px;
-  letter-spacing:0.02em;
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.insta-cta-btn svg{width:18px;height:18px;}
-.insta-cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(224,40,122,0.35);}
 
 @media(max-width:560px){
-  .insta-gallery{margin-top:28px;}
-  .insta-head p{font-size:14.5px;}
+  .insta-widget-wrap{margin-top:28px;}
 }
 
 /* ===== TRAINING METHOD COMPARISON (steps + weekly split) ===== */
@@ -735,9 +699,6 @@ footer{padding:56px 0 28px;}
   .program-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,0.3);}
   .program-card.featured:hover{box-shadow:0 12px 40px rgba(224,40,47,0.25);}
 
-
-  .cert-card{transition:transform .3s ease, border-color .3s ease;}
-  .cert-card:hover{transform:translateY(-4px);border-color:var(--blue-light);}
 
   .action-card{transition:transform .3s ease, box-shadow .3s ease;}
   .action-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.4);}
@@ -905,24 +866,7 @@ footer{padding:56px 0 28px;}
   .tz-callout{flex-direction:column;align-items:flex-start;}
 }
 
-/* ===== CERTIFICATIONS ===== */
-.certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-.cert-card{
-  background:var(--surface);border:1px solid var(--line);padding:28px;
-  display:flex;gap:18px;align-items:flex-start;
-}
-.cert-badge{
-  width:48px;height:48px;flex-shrink:0;
-  background:var(--surface-2);border:1px solid var(--blue);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--blue-light);
-}
-.cert-badge svg{width:24px;height:24px;}
-.cert-body h3{font-size:17px;margin-bottom:4px;}
-.cert-issuer{font-size:13px;color:var(--blue-light);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:10px;}
-.cert-meta{font-size:13px;color:var(--muted);margin-bottom:14px;}
-.cert-link{font-size:13px;font-weight:600;color:var(--text);border-bottom:1px solid var(--blue-light);padding-bottom:2px;transition:color .2s;}
-.cert-link:hover{color:var(--blue-light);}
+/* ===== CERTIFICATIONS (styled inline in about.html) ===== */
 
 .hero-location{
   display:flex;align-items:center;gap:8px;
@@ -1234,7 +1178,6 @@ footer{padding:56px 0 28px;}
   .section-head h2{font-size:23px;}
 
   /* Grids → single column */
-  .certs-grid{grid-template-columns:1fr;}
   .services-grid{grid-template-columns:1fr;}
   .programs-grid{grid-template-columns:1fr;}
   .action-grid{grid-template-columns:1fr;}
@@ -1246,7 +1189,6 @@ footer{padding:56px 0 28px;}
   /* Cards */
   .service-card{padding:24px 20px;}
   .program-card{padding:28px 22px;}
-  .cert-card{padding:22px;}
   .action-card img, .action-card .action-video{height:260px;object-position:center 25%;}
 
   /* Program card featured tag */
@@ -1288,8 +1230,6 @@ footer{padding:56px 0 28px;}
   .program-price span{font-size:22px;}
 
 
-  .cert-card{flex-direction:column;gap:12px;}
-  .cert-badge{width:44px;height:44px;}
 
   .btn-primary,.btn-ghost{padding:13px 22px;font-size:13px;}
 }
