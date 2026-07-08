@@ -384,6 +384,7 @@ var TRANSLATIONS = {
     week_1on1_fri: "Session — Conditioning & core",
     week_1on1_sat: "Optional mobility work",
 
+    btn_start_journey: "Start your journey",
     journey_eyebrow: "Start your journey",
     journey_h2: "Let's build your plan",
     journey_p: "Answer a few quick questions and I'll come back to you with a plan built around your goals.",
@@ -647,6 +648,7 @@ var TRANSLATIONS = {
     week_1on1_fri: "Seancë — Kondicionim & bërthamë",
     week_1on1_sat: "Punë opsionale lëvizshmërie",
 
+    btn_start_journey: "Fillo rrugëtimin",
     journey_eyebrow: "Fillo rrugëtimin tënd",
     journey_h2: "Le të ndërtojmë planin tënd",
     journey_p: "Përgjigju disa pyetjeve të shpejta dhe do të të kthehem me një plan të ndërtuar rreth objektivave të tua.",
@@ -944,6 +946,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (b) b.removeAttribute('hidden');
   });
 
+  // Consent-safe GA4 tracking (gtag only exists after cookie accept)
+  function track(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  }
+  var maxStepSeen = 0;
+
   function stepHasChoice(stepEl) {
     var group = stepEl.querySelector('.journey-options');
     if (!group) return true; // contact step, validated natively
@@ -963,14 +973,22 @@ document.addEventListener('DOMContentLoaded', function () {
       nextBtn.disabled = !isLast && !stepHasChoice(steps[current]);
     }
     if (submitBtn) submitBtn.style.display = isLast ? '' : 'none';
+
+    // Track deepest step reached (fires once per step, not on Back)
+    if (current > maxStepSeen) {
+      maxStepSeen = current;
+      track('journey_step', { step_number: current + 1, step_total: total });
+    }
   }
 
   // Option selection
+  var journeyStarted = false;
   form.querySelectorAll('.journey-options').forEach(function (group) {
     var targetId = group.getAttribute('data-target');
     var target = document.getElementById(targetId);
     group.querySelectorAll('.journey-option').forEach(function (opt) {
       opt.addEventListener('click', function () {
+        if (!journeyStarted) { journeyStarted = true; track('journey_start', {}); }
         group.querySelectorAll('.journey-option').forEach(function (o) { o.classList.remove('selected'); });
         opt.classList.add('selected');
         if (target) target.value = opt.getAttribute('data-value');
@@ -1005,9 +1023,14 @@ document.addEventListener('DOMContentLoaded', function () {
       if (response.ok) {
         if (liveEl) liveEl.style.display = 'none';
         if (successEl) successEl.classList.add('show');
+        track('journey_submit', {
+          goal: (document.getElementById('jf-goal') || {}).value || '',
+          format: (document.getElementById('jf-format') || {}).value || ''
+        });
         form.reset();
       } else {
         if (errorEl) errorEl.classList.add('show');
+        track('journey_submit_error', {});
       }
     })
     .catch(function () {
