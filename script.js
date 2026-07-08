@@ -430,7 +430,25 @@ var TRANSLATIONS = {
     journey_next: "Next",
     journey_submit: "Send my answers",
     journey_success: "Got it — your answers are on the way to me. I'll reply within a day.",
-    journey_error: "Something went wrong. Please try again, or message me on WhatsApp."
+    journey_error: "Something went wrong. Please try again, or message me on WhatsApp.",
+
+    contact_eyebrow: "Get in touch",
+    hero_badge_reviews: "5★ Google reviews",
+    hero_badge_reply: "Reply within 24h",
+    hero_badge_wa: "WhatsApp available",
+    qa_call_label: "Call now",
+    qa_call_note: "Fastest response",
+    qa_wa_label: "WhatsApp",
+    qa_wa_value: "Message me directly",
+    qa_wa_note: "Same-day reply",
+    form_divider: "Or send a message",
+    opt_online_title: "Online coaching",
+    opt_online_price: "€25/month",
+    opt_1on1_title: "1-on-1 in person",
+    opt_1on1_price: "€95/month",
+    opt_unsure_title: "Not sure yet",
+    opt_unsure_sub: "Help me decide",
+    map_open: "Open in Google Maps"
   },
   sq: {
     nav_home: "Kryefaqja",
@@ -694,7 +712,25 @@ var TRANSLATIONS = {
     journey_next: "Vazhdo",
     journey_submit: "Dërgo përgjigjet",
     journey_success: "U mor — përgjigjet po vijnë tek unë. Do të përgjigjem brenda një dite.",
-    journey_error: "Diçka shkoi keq. Provo përsëri, ose më shkruaj në WhatsApp."
+    journey_error: "Diçka shkoi keq. Provo përsëri, ose më shkruaj në WhatsApp.",
+
+    contact_eyebrow: "Na kontakto",
+    hero_badge_reviews: "5★ në Google",
+    hero_badge_reply: "Përgjigje brenda 24h",
+    hero_badge_wa: "WhatsApp i disponueshëm",
+    qa_call_label: "Telefono tani",
+    qa_call_note: "Përgjigja më e shpejtë",
+    qa_wa_label: "WhatsApp",
+    qa_wa_value: "Më shkruaj drejtpërdrejt",
+    qa_wa_note: "Përgjigje po të njëjtën ditë",
+    form_divider: "Ose dërgo një mesazh",
+    opt_online_title: "Stërvitje online",
+    opt_online_price: "€25/muaj",
+    opt_1on1_title: "Një-me-një personalisht",
+    opt_1on1_price: "€95/muaj",
+    opt_unsure_title: "Ende s'jam i sigurt",
+    opt_unsure_sub: "Më ndihmo të vendos",
+    map_open: "Hape në Google Maps"
   }
 };
 
@@ -1042,4 +1078,18 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   render();
+});
+
+/* ===== CONTACT — program card selector ===== */
+document.addEventListener('DOMContentLoaded', function () {
+  var group = document.getElementById('program-cards');
+  var hidden = document.getElementById('cf-program');
+  if (!group || !hidden) return;
+  group.querySelectorAll('.program-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      group.querySelectorAll('.program-card').forEach(function (c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+      hidden.value = card.getAttribute('data-value');
+    });
+  });
 });
