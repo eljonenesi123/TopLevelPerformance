@@ -382,7 +382,54 @@ var TRANSLATIONS = {
     week_1on1_mon: "Session — Lower strength",
     week_1on1_wed: "Session — Upper strength",
     week_1on1_fri: "Session — Conditioning & core",
-    week_1on1_sat: "Optional mobility work"
+    week_1on1_sat: "Optional mobility work",
+
+    journey_eyebrow: "Start your journey",
+    journey_h2: "Let's build your plan",
+    journey_p: "Answer a few quick questions and I'll come back to you with a plan built around your goals.",
+    journey_q_goal: "What's your main goal?",
+    journey_goal_muscle: "Build muscle",
+    journey_goal_fatloss: "Lose fat",
+    journey_goal_strength: "Get stronger",
+    journey_goal_fitness: "General fitness",
+    journey_q_format: "How would you like to train?",
+    journey_format_online: "Online coaching",
+    journey_format_1on1: "1-on-1 in person",
+    journey_format_unsure: "Not sure yet",
+    journey_q_exp: "What's your training experience?",
+    journey_exp_beginner: "Just starting out",
+    journey_exp_intermediate: "Some experience",
+    journey_exp_advanced: "Experienced lifter",
+    journey_q_days: "How many days per week can you train?",
+    journey_days_23: "2–3 days",
+    journey_days_45: "4–5 days",
+    journey_days_6: "6+ days",
+    journey_q_nutrition: "How would you describe your nutrition?",
+    journey_nut_good: "I eat well & track it",
+    journey_nut_ok: "Decent, but inconsistent",
+    journey_nut_help: "I need guidance with food",
+    journey_label_food: "What does a typical day of eating look like for you?",
+    journey_ph_food: "e.g. coffee for breakfast, byrek at lunch, big dinner, snacks at night…",
+    journey_q_health: "Any injuries or health problems I should know about?",
+    journey_health_no: "No, all good",
+    journey_health_yes: "Yes — I'll explain below",
+    journey_label_health: "Tell me more — old injuries, pain, conditions, medication…",
+    journey_ph_health: "e.g. lower back pain, knee surgery in 2022, high blood pressure…",
+    journey_q_contact: "Almost there — where can I reach you?",
+    journey_label_name: "Name",
+    journey_ph_name: "Your full name",
+    journey_label_email: "Email",
+    journey_ph_email: "you@email.com",
+    journey_label_phone: "WhatsApp / phone",
+    journey_ph_phone: "+355 …",
+    journey_label_notes: "Anything else you want to tell me?",
+    journey_ph_notes: "Your schedule, what you've tried before, what didn't work, your motivation — write as much as you want…",
+    journey_optional: "(optional)",
+    journey_back: "Back",
+    journey_next: "Next",
+    journey_submit: "Send my answers",
+    journey_success: "Got it — your answers are on the way to me. I'll reply within a day.",
+    journey_error: "Something went wrong. Please try again, or message me on WhatsApp."
   },
   sq: {
     nav_home: "Kryefaqja",
@@ -598,7 +645,54 @@ var TRANSLATIONS = {
     week_1on1_mon: "Seancë — Forcë e këmbëve",
     week_1on1_wed: "Seancë — Forcë e sipërme",
     week_1on1_fri: "Seancë — Kondicionim & bërthamë",
-    week_1on1_sat: "Punë opsionale lëvizshmërie"
+    week_1on1_sat: "Punë opsionale lëvizshmërie",
+
+    journey_eyebrow: "Fillo rrugëtimin tënd",
+    journey_h2: "Le të ndërtojmë planin tënd",
+    journey_p: "Përgjigju disa pyetjeve të shpejta dhe do të të kthehem me një plan të ndërtuar rreth objektivave të tua.",
+    journey_q_goal: "Cili është objektivi yt kryesor?",
+    journey_goal_muscle: "Ndërto muskuj",
+    journey_goal_fatloss: "Humb yndyrë",
+    journey_goal_strength: "Bëhu më i fortë",
+    journey_goal_fitness: "Fitnes i përgjithshëm",
+    journey_q_format: "Si dëshiron të stërvitesh?",
+    journey_format_online: "Stërvitje online",
+    journey_format_1on1: "Një-me-një personalisht",
+    journey_format_unsure: "Ende s'jam i sigurt",
+    journey_q_exp: "Sa përvojë ke në stërvitje?",
+    journey_exp_beginner: "Sapo po filloj",
+    journey_exp_intermediate: "Kam pak përvojë",
+    journey_exp_advanced: "Me përvojë në palestër",
+    journey_q_days: "Sa ditë në javë mund të stërvitesh?",
+    journey_days_23: "2–3 ditë",
+    journey_days_45: "4–5 ditë",
+    journey_days_6: "6+ ditë",
+    journey_q_nutrition: "Si do ta përshkruaje ushqyerjen tënde?",
+    journey_nut_good: "Ha mirë & e ndjek me kujdes",
+    journey_nut_ok: "Mirë, por jo gjithmonë",
+    journey_nut_help: "Kam nevojë për udhëzime me ushqimin",
+    journey_label_food: "Si duket një ditë tipike ushqimi për ty?",
+    journey_ph_food: "p.sh. kafe në mëngjes, byrek në drekë, darkë e madhe, snacks në mbrëmje…",
+    journey_q_health: "Ke dëmtime apo probleme shëndetësore që duhet t'i di?",
+    journey_health_no: "Jo, gjithçka në rregull",
+    journey_health_yes: "Po — do shpjegoj më poshtë",
+    journey_label_health: "Më trego më shumë — dëmtime të vjetra, dhimbje, gjendje, medikamente…",
+    journey_ph_health: "p.sh. dhimbje në pjesën e poshtme të shpinës, operacion në gju në 2022, tension i lartë…",
+    journey_q_contact: "Gati — ku mund të të kontaktoj?",
+    journey_label_name: "Emri",
+    journey_ph_name: "Emri juaj i plotë",
+    journey_label_email: "Email",
+    journey_ph_email: "ju@email.com",
+    journey_label_phone: "WhatsApp / telefon",
+    journey_ph_phone: "+355 …",
+    journey_label_notes: "Diçka tjetër që dëshiron të më tregosh?",
+    journey_ph_notes: "Orari yt, çfarë ke provuar më parë, çfarë s'funksionoi, motivimi yt — shkruaj sa të duash…",
+    journey_optional: "(opsionale)",
+    journey_back: "Mbrapa",
+    journey_next: "Vazhdo",
+    journey_submit: "Dërgo përgjigjet",
+    journey_success: "U mor — përgjigjet po vijnë tek unë. Do të përgjigjem brenda një dite.",
+    journey_error: "Diçka shkoi keq. Provo përsëri, ose më shkruaj në WhatsApp."
   }
 };
 
@@ -823,4 +917,106 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+});
+/* ===== START YOUR JOURNEY questionnaire ===== */
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('journey-form');
+  if (!form) return;
+
+  var steps = Array.prototype.slice.call(form.querySelectorAll('.journey-step'));
+  var total = steps.length;
+  var current = 0;
+
+  var bar = document.getElementById('journey-progress-bar');
+  var stepNum = document.getElementById('journey-step-num');
+  var stepTotal = document.getElementById('journey-step-total');
+  var backBtn = document.getElementById('journey-back');
+  var nextBtn = document.getElementById('journey-next');
+  var submitBtn = document.getElementById('journey-submit');
+  var liveEl = document.getElementById('journey-live');
+  var successEl = document.getElementById('journey-success');
+  var errorEl = document.getElementById('journey-error');
+
+  if (stepTotal) stepTotal.textContent = total;
+
+  // JS owns button visibility — clear any hidden attributes from markup
+  [backBtn, nextBtn, submitBtn].forEach(function (b) {
+    if (b) b.removeAttribute('hidden');
+  });
+
+  function stepHasChoice(stepEl) {
+    var group = stepEl.querySelector('.journey-options');
+    if (!group) return true; // contact step, validated natively
+    return !!group.querySelector('.journey-option.selected');
+  }
+
+  function render() {
+    steps.forEach(function (s, i) { s.classList.toggle('active', i === current); });
+    if (bar) bar.style.width = ((current + 1) / total * 100) + '%';
+    if (stepNum) stepNum.textContent = current + 1;
+
+    if (backBtn) backBtn.style.display = current === 0 ? 'none' : '';
+
+    var isLast = current === total - 1;
+    if (nextBtn) {
+      nextBtn.style.display = isLast ? 'none' : '';
+      nextBtn.disabled = !isLast && !stepHasChoice(steps[current]);
+    }
+    if (submitBtn) submitBtn.style.display = isLast ? '' : 'none';
+  }
+
+  // Option selection
+  form.querySelectorAll('.journey-options').forEach(function (group) {
+    var targetId = group.getAttribute('data-target');
+    var target = document.getElementById(targetId);
+    group.querySelectorAll('.journey-option').forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        group.querySelectorAll('.journey-option').forEach(function (o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        if (target) target.value = opt.getAttribute('data-value');
+        if (nextBtn) nextBtn.disabled = false;
+      });
+    });
+  });
+
+  if (nextBtn) nextBtn.addEventListener('click', function () {
+    if (!stepHasChoice(steps[current])) return;
+    if (current < total - 1) { current++; render(); }
+  });
+  if (backBtn) backBtn.addEventListener('click', function () {
+    if (current > 0) { current--; render(); }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    // Native validation for the contact step (name + email required)
+    if (typeof form.reportValidity === 'function' && !form.reportValidity()) return;
+
+    if (successEl) successEl.classList.remove('show');
+    if (errorEl) errorEl.classList.remove('show');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (response) {
+      if (response.ok) {
+        if (liveEl) liveEl.style.display = 'none';
+        if (successEl) successEl.classList.add('show');
+        form.reset();
+      } else {
+        if (errorEl) errorEl.classList.add('show');
+      }
+    })
+    .catch(function () {
+      if (errorEl) errorEl.classList.add('show');
+    })
+    .finally(function () {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+    });
+  });
+
+  render();
 });
