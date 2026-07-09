@@ -1447,7 +1447,7 @@ footer{padding:56px 0 28px;}
 }
 
 /* Program card selector (mirrors the questionnaire style) */
-.program-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:4px;}
+.program-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;}
 .program-card{
   display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;
   background:var(--bg);border:1px solid var(--line);color:var(--text);

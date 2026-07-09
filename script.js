@@ -396,6 +396,7 @@ var TRANSLATIONS = {
     journey_q_format: "How would you like to train?",
     journey_format_online: "Online coaching",
     journey_format_1on1: "1-on-1 in person",
+    journey_format_pro: "Professional athlete",
     journey_format_unsure: "Not sure yet",
     journey_q_exp: "What's your training experience?",
     journey_exp_beginner: "Just starting out",
@@ -446,6 +447,8 @@ var TRANSLATIONS = {
     opt_online_price: "€25/month",
     opt_1on1_title: "1-on-1 in person",
     opt_1on1_price: "€95/month",
+    opt_pro_title: "Professional athletes",
+    opt_pro_price: "Custom pricing",
     opt_unsure_title: "Not sure yet",
     opt_unsure_sub: "Help me decide",
     map_open: "Open in Google Maps"
@@ -678,6 +681,7 @@ var TRANSLATIONS = {
     journey_q_format: "Si dëshiron të stërvitesh?",
     journey_format_online: "Stërvitje online",
     journey_format_1on1: "Një-me-një personalisht",
+    journey_format_pro: "Atlet profesionist",
     journey_format_unsure: "Ende s'jam i sigurt",
     journey_q_exp: "Sa përvojë ke në stërvitje?",
     journey_exp_beginner: "Sapo po filloj",
@@ -728,6 +732,8 @@ var TRANSLATIONS = {
     opt_online_price: "€25/muaj",
     opt_1on1_title: "Një-me-një personalisht",
     opt_1on1_price: "€95/muaj",
+    opt_pro_title: "Atletë profesionistë",
+    opt_pro_price: "Çmim i personalizuar",
     opt_unsure_title: "Ende s'jam i sigurt",
     opt_unsure_sub: "Më ndihmo të vendos",
     map_open: "Hape në Google Maps"
