@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eljonenesi123.github.io/TopLevelPerformance/sitemap.xml
+Sitemap: https://top-levelperformance.com/sitemap.xml
